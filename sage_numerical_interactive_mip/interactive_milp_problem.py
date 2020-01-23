@@ -31,7 +31,7 @@ def _form_thin_long_triangle(k):
 
     EXAMPLES::
 
-        sage: from sage.numerical.interactive_mi_simplex_method \
+        sage: from sage.numerical.interactive_milp_problem \
         ....:     import _form_thin_long_triangle
         sage: A, b, = _form_thin_long_triangle(4)
         sage: A, b
@@ -442,7 +442,7 @@ class InteractiveMILPProblem(SageObject):
         """
         return self.relaxation()._Abcx
 
-    def add_constraint(self, coefficients, new_b, new_constraint_type="<="):
+    def add_constraint(self, coefficients, constant_term, constraint_type="<="):
         r"""
         Return a new MILP problem by adding a constraint to``self``.
 
@@ -450,9 +450,9 @@ class InteractiveMILPProblem(SageObject):
 
         - ``coefficients`` -- coefficients of the new constraint
 
-        - ``new_b`` -- a constant term of the new constraint
+        - ``constant_term`` -- a constant term of the new constraint
 
-        - ``new_constraint_type`` -- (default: ``"<="``) a string indicating
+        - ``constraint_type`` -- (default: ``"<="``) a string indicating
           the constraint type of the new constraint
 
         OUTPUT:
@@ -465,7 +465,7 @@ class InteractiveMILPProblem(SageObject):
             sage: b = (1000, 1500)
             sage: c = (10, 5)
             sage: P = InteractiveMILPProblem(A, b, c)
-            sage: P1 = P.add_constraint(([2, 4]), 2000, new_constraint_type="<=")
+            sage: P1 = P.add_constraint(([2, 4]), 2000, constraint_type="<=")
             sage: P1.Abcx()
             (
             [1 1]
@@ -481,17 +481,17 @@ class InteractiveMILPProblem(SageObject):
             )
             sage: P.constraint_types()
             ('<=', '<=')
-            sage: P2 = P.add_constraint(([2, 4, 6]), 2000, new_constraint_type="<=")
+            sage: P2 = P.add_constraint(([2, 4, 6]), 2000, constraint_type="<=")
             Traceback (most recent call last):
             ...
             ValueError: A and coefficients have incompatible dimensions
-            sage: P3 = P.add_constraint(([2, 4]), 2000, new_constraint_type="<")
+            sage: P3 = P.add_constraint(([2, 4]), 2000, constraint_type="<")
             Traceback (most recent call last):
             ...
             ValueError: unknown constraint type
         """
-        new_relaxation = self._relaxation.add_constraint(coefficients, new_b,
-                                            new_constraint_type=new_constraint_type)
+        new_relaxation = self._relaxation.add_constraint(coefficients, constant_term,
+                                            constraint_type=constraint_type)
         return InteractiveMILPProblem(relaxation = new_relaxation,
                     integer_variables=self.integer_variables())
 
@@ -1908,7 +1908,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             I.add(D.basic_variables()[-1])
             return D, I
 
-    def add_constraint(self, coefficients, new_b, new_slack_variable=None, integer_slack=False):
+    def add_constraint(self, coefficients, constant_term, slack_variable=None, integer_slack=False):
         r"""
         Return a new MILP problem by adding a constraint to``self``.
 
@@ -1916,9 +1916,9 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         - ``coefficients`` -- coefficients of the new constraint
 
-        - ``new_b`` -- a constant term of the new constraint
+        - ``constant_term`` -- a constant term of the new constraint
 
-        - ``new_slack_variable`` -- (default: depends on :func:`style`)
+        - ``slack_variable`` -- (default: depends on :func:`style`)
           a vector of the slack variable or a string giving the name
 
         - ``integer_slack``-- (default: False) a boolean value
@@ -1951,7 +1951,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             sage: P.slack_variables()
             (x3, x4)
             sage: P = InteractiveMILPProblemStandardForm(A, b, c)
-            sage: P2 = P.add_constraint(([2, 4]), 2000, new_slack_variable='c')
+            sage: P2 = P.add_constraint(([2, 4]), 2000, slack_variable='c')
             sage: P2.slack_variables()
             (x3, x4, c)
             sage: P3 = P.add_constraint(([2, 4, 6]), 2000)
@@ -1959,8 +1959,8 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             ...
             ValueError: A and coefficients have incompatible dimensions
         """
-        new_relaxation = self.relaxation().add_constraint(coefficients, new_b,
-                                        new_slack_variable=new_slack_variable)
+        new_relaxation = self.relaxation().add_constraint(coefficients, constant_term,
+                                                          slack_variable=slack_variable)
         integer_variables = self.integer_variables()
         if integer_slack:
             integer_variables.add(new_relaxation.slack_variables()[-1])
