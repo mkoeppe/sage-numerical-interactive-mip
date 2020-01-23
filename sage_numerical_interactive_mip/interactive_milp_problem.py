@@ -1106,7 +1106,8 @@ class InteractiveMILPProblem(SageObject):
             F, b, xmin=None, xmax=None, ymin=None, ymax=None
             )
         result = Graphics()
-        for i in range(xmin, xmax+1):
+        from sage.functions.other import ceil, floor
+        for i in range(ceil(xmin), floor(xmax)+1):
             if integer_variable == "x":
                 l = Polyhedron(eqns=[[-i, 1, 0]])
             else:
