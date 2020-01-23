@@ -308,11 +308,11 @@ class InteractiveMILPProblem(SageObject):
         continuous_var = ""
         if self.integer_variables():
             integer_var =  r"{} \in {}".format(
-                                   ", ".join(map(latex, self.integer_variables())),
+                                   ", ".join(map(latex, sorted(self.integer_variables()))),
                                     r"\mathbb{Z}") +  r" \\"
         if self.continuous_variables():
             continuous_var =  r"{} \in {}".format(
-                                   ", ".join(map(latex, self.continuous_variables())),
+                                   ", ".join(map(latex, sorted(self.continuous_variables()))),
                                     r"\mathbb{R}")
         return lines[:-11] + r" \\" + integer_var + continuous_var + lines[-11:]
 
@@ -2500,7 +2500,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             \begin{equation*}
             ...
             \end{equation*}
-            Now we have integer variables: $x_{2}, x_{1}, x_{5}, x_{4}, x_{3}$
+            Now we have integer variables: $x_{1}, x_{2}, x_{3}, x_{4}, x_{5}$
             Since some integer variables don't have integer solutions, we need to make another cut.
             ...
             \begin{equation*}
@@ -2587,7 +2587,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             if show_steps:
                 if n > 0:
                     output.append("Now we have integer variables: "
-                                  r"${}$".format(", ".join(map(latex, I))))
+                                  r"${}$".format(", ".join(map(latex, sorted(I)))))
                     output.append("Since some integer variables don't have integer solutions, "
                                   "we need to make another cut.")
         if show_steps:
