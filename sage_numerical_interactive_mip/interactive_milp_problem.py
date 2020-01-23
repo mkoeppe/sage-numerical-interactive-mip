@@ -268,7 +268,7 @@ class InteractiveMILPProblem(SageObject):
         - four rational numbers
         """
         if ymax is None:
-            ymax = max(map(abs, b) + [v[1] for v in F.vertices()])
+            ymax = max([abs(x) for x in b] + [v[1] for v in F.vertices()])
         if ymin is None:
             ymin = min([-ymax/4.0] + [v[1] for v in F.vertices()])
         if xmax is None:
