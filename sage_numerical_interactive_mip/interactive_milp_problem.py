@@ -98,15 +98,16 @@ class InteractiveMILPProblem(SageObject):
 
         \begin{array}{l}
         \begin{array}{lcrcrcl}
-         \max \mspace{-6mu}&\mspace{-6mu}  \mspace{-6mu}&\mspace{-6mu} 10 C \mspace{-6mu}&\mspace{-6mu} + \mspace{-6mu}&\mspace{-6mu} 5 B \mspace{-6mu}&\mspace{-6mu}  \mspace{-6mu}&\mspace{-6mu} \
-         \mspace{-6mu}&\mspace{-6mu}  \mspace{-6mu}&\mspace{-6mu} C \mspace{-6mu}&\mspace{-6mu} + \mspace{-6mu}&\mspace{-6mu} B \mspace{-6mu}&\mspace{-6mu} \leq \mspace{-6mu}&\mspace{-6mu} 1000 \
-         \mspace{-6mu}&\mspace{-6mu}  \mspace{-6mu}&\mspace{-6mu} 3 C \mspace{-6mu}&\mspace{-6mu} + \mspace{-6mu}&\mspace{-6mu} B \mspace{-6mu}&\mspace{-6mu} \leq \mspace{-6mu}&\mspace{-6mu} 1500 \
+         \max \mspace{-6mu}&\mspace{-6mu}  \mspace{-6mu}&\mspace{-6mu} 10 C \mspace{-6mu}&\mspace{-6mu} + \mspace{-6mu}&\mspace{-6mu} 5 B \mspace{-6mu}&\mspace{-6mu}  \mspace{-6mu}&\mspace{-6mu} \\
+         \mspace{-6mu}&\mspace{-6mu}  \mspace{-6mu}&\mspace{-6mu} C \mspace{-6mu}&\mspace{-6mu} + \mspace{-6mu}&\mspace{-6mu} B \mspace{-6mu}&\mspace{-6mu} \leq \mspace{-6mu}&\mspace{-6mu} 1000 \\
+         \mspace{-6mu}&\mspace{-6mu}  \mspace{-6mu}&\mspace{-6mu} 3 C \mspace{-6mu}&\mspace{-6mu} + \mspace{-6mu}&\mspace{-6mu} B \mspace{-6mu}&\mspace{-6mu} \leq \mspace{-6mu}&\mspace{-6mu} 1500 \\
         \end{array} \\
-        C, B \geq 0
-        B, C \in \mathbb{Z}
+        & C, B \geq 0 \\
+        & C, B \in \mathbb{Z}
         \end{array}
 
     ::
+
         sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
         sage: A = ([1, 1], [3, 1])
         sage: b = (1000, 1500)
@@ -1158,7 +1159,7 @@ class InteractiveMILPProblem(SageObject):
         ..Note::
 
             For more information, refer to the docstrings of :meth:`plot`
-        in :class:`InteractiveLPProblem`.
+            in :class:`InteractiveLPProblem`.
 
         INPUT:
 
@@ -1504,7 +1505,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
         \pm \max cx \\
         Ax \leq b \\
         x \geq 0 \\
-        x might have integer components.
+        \text{some components of $x$ restricted to integer values}
         \end{array}
 
     INPUT:
@@ -1549,7 +1550,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
     EXAMPLES::
 
-    We will construct the following problem directly:
+    We will construct the following problem directly::
 
         sage: from sage_numerical_interactive_mip import InteractiveMILPProblem, InteractiveMILPProblemStandardForm
         sage: A = ([1, 1], [3, 1])
@@ -1881,7 +1882,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
 
         2) a non-integer variable is among the nonbasic variables 
-        with non-zero coefficients on the source row::
+           with non-zero coefficients on the source row::
 
             sage: A = ([1, 3, 5], [2, 6, 9], [6, 8, 3])
             sage: b = (12/10, 23/10, 31/10)
@@ -1894,9 +1895,9 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             sage: D.row_coefficients("x3")
             (-1/27, 10/27, 2/9)
 
-        If the user chooses `x_3` to provide the source row,
-        :meth:`add_a_cut` will give an error, because the non-integer
-        variable `x_6` has a non-zero coefficient `1/27` on the source row::
+           If the user chooses `x_3` to provide the source row,
+           :meth:`add_a_cut` will give an error, because the non-integer
+           variable `x_6` has a non-zero coefficient `1/27` on the source row::
 
             sage: P.add_a_cut(P.final_dictionary(), P.integer_variables(),
             ....: basic_variable='x3', separator="gomory_fractional")
@@ -1904,8 +1905,8 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             ...
             ValueError: this is not an eligible source row
 
-        In fact, we cannot add a Gomory fractional cut to this dictionary, because
-        the non-integer variable `x_6` has non-zero coefficient on each row::
+           In fact, we cannot add a Gomory fractional cut to this dictionary, because
+           the non-integer variable `x_6` has non-zero coefficient on each row::
 
             sage: D.enter(6)
             sage: D.entering_coefficients()
@@ -1916,8 +1917,8 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             ...
             ValueError: there does not exist an eligible source row
 
-        However, the previous restrictions are not held for Gomory
-        mixed integer cuts::
+           However, the previous restrictions are not held for Gomory
+           mixed integer cuts::
 
             sage: D2, I2 = P.add_a_cut(P.final_dictionary(), P.integer_variables(),
             ....: separator="gomory_mixed_integer")

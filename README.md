@@ -6,7 +6,7 @@ Parts of Peijun's work (improvements to `sage.numerical.interactive_simplex_meth
 
 The interactive MILP solver in this repository is based on commit 5a4e3508d95e95e4491efcb2cf16fbe25be60bec, dated August 24, 2016, from the SageMath tree https://github.com/pgxiao/sage.git; this work superseded an earlier effort (adding integer variables in `interactive_simplex_method`) at https://trac.sagemath.org/ticket/18805
 
-It was rebased in January 2020 onto SageMath version 9.1.beta1, and then filtered using `git filter-repo` to the single file `sage_numerical_interactive_mip/interactive_milp_problem.py`.
+It was rebased by Matthias Koeppe in January 2020 onto SageMath version 9.1.beta1, and then filtered using `git filter-repo` to the single file `sage_numerical_interactive_mip/interactive_milp_problem.py`.
 
 ## How to use
 
@@ -14,6 +14,8 @@ This needs a working SageMath; install, for example, from conda-forge as describ
 
 The code comes with extensive documentation and tests; see the docstrings in the file.
 
-## How to run the testsuite
+## How to run the testsuite and build the HTML documentation
 
 Install `tox`, make sure that `sage` is accessible in your `PATH` and then run `tox`.
+
+This also builds the documentation in ``.tox/docs/tmp/html/index.html``.
