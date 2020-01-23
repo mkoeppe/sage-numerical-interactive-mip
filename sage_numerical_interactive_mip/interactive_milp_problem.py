@@ -484,7 +484,7 @@ class InteractiveMILPProblem(SageObject):
             sage: P2 = P.add_constraint(([2, 4, 6]), 2000, constraint_type="<=")
             Traceback (most recent call last):
             ...
-            ValueError: A and coefficients have incompatible dimensions
+            TypeError: number of columns must be the same, not 2 and 3
             sage: P3 = P.add_constraint(([2, 4]), 2000, constraint_type="<")
             Traceback (most recent call last):
             ...
@@ -1957,7 +1957,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             sage: P3 = P.add_constraint(([2, 4, 6]), 2000)
             Traceback (most recent call last):
             ...
-            ValueError: A and coefficients have incompatible dimensions
+            TypeError: number of columns must be the same, not 2 and 3
         """
         new_relaxation = self.relaxation().add_constraint(coefficients, constant_term,
                                                           slack_variable=slack_variable)
