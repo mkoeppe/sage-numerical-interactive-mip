@@ -1072,7 +1072,7 @@ class InteractiveMILPProblem(SageObject):
         colors = rainbow(self.m() + 2)
         number_of_inequalities = self.m()
         if number_of_cuts > number_of_inequalities:
-            raise ValueError("number of cuts must less than number of ineqalities")
+            raise ValueError("number of cuts must less than number of inequalities")
         number_of_constraints = number_of_inequalities - number_of_cuts
         list_of_number = [int(i+1) for i in range(number_of_inequalities)]
 
