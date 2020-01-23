@@ -31,8 +31,7 @@ def _form_thin_long_triangle(k):
 
     EXAMPLES::
 
-        sage: from sage.numerical.interactive_milp_problem \
-        ....:     import _form_thin_long_triangle
+        sage: from sage_numerical_interactive_mip.interactive_milp_problem import _form_thin_long_triangle
         sage: A, b, = _form_thin_long_triangle(4)
         sage: A, b
         (
@@ -108,6 +107,7 @@ class InteractiveMILPProblem(SageObject):
         \end{array}
 
     ::
+        sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
         sage: A = ([1, 1], [3, 1])
         sage: b = (1000, 1500)
         sage: c = (10, 5)
@@ -155,6 +155,7 @@ class InteractiveMILPProblem(SageObject):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -205,6 +206,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1, 2], [3, 1, 7], [6, 4, 5])
             sage: b = (1000, 1500, 2000)
             sage: c = (10, 5, 1)
@@ -232,6 +234,7 @@ class InteractiveMILPProblem(SageObject):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -288,6 +291,7 @@ class InteractiveMILPProblem(SageObject):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1, 2], [3, 1, 7], [6, 4, 5])
             sage: b = (1000, 1500, 2000)
             sage: c = (10, 5, 1)
@@ -380,6 +384,7 @@ class InteractiveMILPProblem(SageObject):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -405,6 +410,7 @@ class InteractiveMILPProblem(SageObject):
         
         EXAMPLES::
         
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -430,6 +436,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -461,6 +468,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -505,6 +513,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 2, 1], [3, 1, 5])
             sage: b = (1000, 1500)
             sage: c = (10, 5, 7)
@@ -528,6 +537,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -552,6 +562,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -573,6 +584,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -596,6 +608,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -616,6 +629,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 2, 1], [3, 1, 5])
             sage: b = (1000, 1500)
             sage: c = (10, 5, 7)
@@ -638,6 +652,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -660,6 +675,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -713,6 +729,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1/10, 15/10)
             sage: c = (10, 5)
@@ -753,6 +770,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([-1, 1], [8, 2])
             sage: b = (2, 17)
             sage: c = (55/10, 21/10)
@@ -801,6 +819,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -824,6 +843,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -845,6 +865,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -866,6 +887,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -887,6 +909,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -920,6 +943,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -958,6 +982,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (100, 150)
             sage: c = (10, 5)
@@ -1013,6 +1038,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1201,6 +1227,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1296,6 +1323,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1330,6 +1358,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1423,6 +1452,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1444,6 +1474,7 @@ class InteractiveMILPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1520,6 +1551,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
     We will construct the following problem directly:
 
+        sage: from sage_numerical_interactive_mip import InteractiveMILPProblem, InteractiveMILPProblemStandardForm
         sage: A = ([1, 1], [3, 1])
         sage: b = (1000, 1500)
         sage: c = (10, 5)
@@ -1557,6 +1589,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1632,6 +1665,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([1, 1, 2], [3, 1, 7], [6, 4, 5])
             sage: b = (1000, 1500, 2000)
             sage: c = (10, 5, 1)
@@ -1665,6 +1699,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([-1, 1], [8, 2])
             sage: b = (2, 17)
             sage: c = (55/10, 21/10)
@@ -1704,6 +1739,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([-1, 1], [8, 2])
             sage: b = (2, 17)
             sage: c = (55/10, 21/10)
@@ -1798,6 +1834,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([-1, 1], [8, 2])
             sage: b = (2, 17)
             sage: c = (55/10, 21/10)
@@ -1931,6 +1968,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1979,6 +2017,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([1, 2, 1], [3, 1, 5])
             sage: b = (1000, 1500)
             sage: c = (10, 5, 7)
@@ -2003,6 +2042,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([1, 1], [3, 1], [-1, -1])
             sage: b = (1000, 1500, -400)
             sage: c = (10, 5)
@@ -2038,6 +2078,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2061,6 +2102,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2090,6 +2132,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2119,6 +2162,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2144,6 +2188,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2161,6 +2206,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([1, 1], [3, 1])
             sage: b = (1/10, 15/10)
             sage: c = (10, 5)
@@ -2246,6 +2292,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([1, 1], [3, 1], [-1, -1])
             sage: b = (1000, 1500, -400)
             sage: c = (10, 5)
@@ -2292,6 +2339,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([-1, 1], [8, 2])
             sage: b = (2, 17)
             sage: c = (55/10, 21/10)
@@ -2384,6 +2432,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2409,6 +2458,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2470,6 +2520,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([-1, 1], [8, 2])
             sage: b = (2, 17)
             sage: c = (55/10, 21/10)
@@ -2514,8 +2565,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             The dictionary now is feasible and optimal, as well as integer feasibility.
             The optimal value: $\frac{59}{5}$. An optimal solution: $\left(1,\,3\right)$.
 
-            sage: from sage.numerical.interactive_milp_problem \
-            ....:     import _form_thin_long_triangle
+            sage: from sage_numerical_interactive_mip.interactive_milp_problem import _form_thin_long_triangle
             sage: A1, b1 = _form_thin_long_triangle(4)
             sage: c1 = (-1/27, 1/31)
             sage: P1 = InteractiveMILPProblemStandardForm(A1, b1, c1,
@@ -2634,6 +2684,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([1, 1], [3, 1], [-1, -1])
             sage: b = (1000, 1500, -400)
             sage: c = (10, 5)
@@ -2684,6 +2735,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([1, 1], [3, 1], [-1, -1])
             sage: b = (1000, 1500, -400)
             sage: c = (10, 5)
@@ -2724,6 +2776,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
