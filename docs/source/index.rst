@@ -1,7 +1,6 @@
-=====================================================
- Interactive mixed integer linear programming solver
-=====================================================
-
+=====================================================================================
+ sage-numerical-interactive-mip: Interactive mixed integer linear programming solver
+=====================================================================================
 .. plot::
 
     from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
@@ -17,12 +16,16 @@
 
 Project page: https://github.com/mkoeppe/sage-numerical-interactive-mip
 
-This is an extension of SageMath's mixed integer linear programming facilities described at
-http://doc.sagemath.org/html/en/reference/numerical/index.html
+.. include:: ../../README.rst
+   :start-after: intro
 
+.. include:: ../../THANKS.rst
 
-.. automodule:: sage_numerical_interactive_mip.interactive_milp_problem
-   :members:
-   :special-members:
-   :private-members:
-   :show-inheritance:
+Modules
+=======
+
+.. toctree::
+   :maxdepth: 2
+
+   interactive_milp_problem
+   solver_dictionaries
