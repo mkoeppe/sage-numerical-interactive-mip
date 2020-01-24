@@ -11,7 +11,7 @@ channels:
   - defaults
 dependencies:
   - python=3
-  - sage=9.0
+  - sage=8.9
   - sphinx
   - sphinxcontrib-websupport
   - setuptools
