@@ -13,6 +13,7 @@ jobs:
           brew cask install sage --no-quarantine
           brew install pkg-config coin-or-tools/coinor/cbc
           brew install tox
+      - run: mkdir -p ~/.sage; echo "import sage_numerical_backends_coin.coin_backend as coin_backend, sage.numerical.backends as backends, sys; sys.modules['sage.numerical.backends.coin_backend'] = backends.coin_backend = coin_backend;" > ~/.sage/init.sage
       - name: Test package
         run: tox
   conda_build_and_test:
@@ -29,6 +30,8 @@ jobs:
         environment-file: environment.yml
         python-version: 3.7
         auto-activate-base: false
+    - name: Patch in CoinBackend
+      run: mkdir -p ~/.sage; echo "import sage_numerical_backends_coin.coin_backend as coin_backend, sage.numerical.backends as backends, sys; sys.modules['sage.numerical.backends.coin_backend'] = backends.coin_backend = coin_backend;" > ~/.sage/init.sage
     - name: Test package
       shell: bash -l {0}
       run: tox
@@ -39,8 +42,9 @@ jobs:
     - name: Install SageMath and CBC
       run: |
         sudo DEBIAN_FRONTEND=noninteractive apt-get update
-        sudo DEBIAN_FRONTEND=noninteractive apt-get install sagemath coinor-cbc coinor-libcbc-dev python-setuptools python-sphinx tox pip
-        sage -python -m pip install --user sage-numerical-backends-coin
-        sage -python -m pip list
+        sudo DEBIAN_FRONTEND=noninteractive apt-get install sagemath coinor-cbc coinor-libcbc-dev python-setuptools python-sphinx tox python-pip
+        sage -python -m pip install --user -r requirements.txt
+    - name: Patch in CoinBackend
+      run: mkdir -p ~/.sage; echo "import sage_numerical_backends_coin.coin_backend as coin_backend, sage.numerical.backends as backends, sys; sys.modules['sage.numerical.backends.coin_backend'] = backends.coin_backend = coin_backend;" > ~/.sage/init.sage
     - name: Test package
       run: tox
