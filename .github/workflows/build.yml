@@ -13,8 +13,7 @@ jobs:
           brew cask install sage --no-quarantine
           brew install pkg-config coin-or-tools/coinor/cbc
           brew install tox
-      - name: Patch in CoinBackend
-        run: mkdir -p ~/.sage; echo "import sage_numerical_backends_coin.coin_backend as coin_backend, sage.numerical.backends as backends, sys; sys.modules['sage.numerical.backends.coin_backend'] = backends.coin_backend = coin_backend;" > ~/.sage/init.sage
+      - run: mkdir -p ~/.sage; echo "import sage_numerical_backends_coin.coin_backend as coin_backend, sage.numerical.backends as backends, sys; sys.modules['sage.numerical.backends.coin_backend'] = backends.coin_backend = coin_backend;" > ~/.sage/init.sage
       - name: Test package
         run: tox
   conda_build_and_test:

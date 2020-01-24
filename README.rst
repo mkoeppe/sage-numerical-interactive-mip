@@ -4,10 +4,6 @@
 
 .. intro
 
-.. image:: https://github.com/mkoeppe/sage-numerical-interactive-mip/workflows/Build%20and%20test%20Python%20package/badge.svg
-   :alt: [Build and test Python package]
-   :target: https://github.com/mkoeppe/sage-numerical-interactive-mip/actions/
-
 This package is an extension of SageMath's mixed integer linear programming
 facilities described at
 http://doc.sagemath.org/html/en/reference/numerical/index.html
