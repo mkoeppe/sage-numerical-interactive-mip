@@ -20,7 +20,7 @@ class LPAbstractBackendDictionary(LPAbstractDictionary):
     One needs an instance of :class:`MixedIntegerLinearProgram` to initialize
     this class::
 
-        sage: from sage.numerical.backends.abstract_backend_dictionary \
+        sage: from sage_numerical_interactive_mip.backends.abstract_backend_dictionary \
               import LPAbstractBackendDictionary
         sage: p = MixedIntegerLinearProgram(maximization=True)
         sage: x = p.new_variable(nonnegative=True)
@@ -83,7 +83,7 @@ class LPAbstractBackendDictionary(LPAbstractDictionary):
 
         Setting up the problem::
 
-            sage: from sage.numerical.backends.abstract_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.abstract_backend_dictionary \
                 import LPAbstractBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True,\
                                                 solver="GLPK")
@@ -130,7 +130,7 @@ class LPAbstractBackendDictionary(LPAbstractDictionary):
 
         If a name is given, then returns the name itself::
 
-            sage: from sage.numerical.backends.abstract_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.abstract_backend_dictionary \
                   import LPAbstractBackendDictionary
             sage: LPAbstractBackendDictionary._format_('Name')
             'Name'
@@ -165,7 +165,7 @@ class LPAbstractBackendDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.backends.abstract_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.abstract_backend_dictionary \
                   import LPAbstractBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True,\
                                                 solver="GLPK")
@@ -192,7 +192,7 @@ class LPAbstractBackendDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.backends.abstract_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.abstract_backend_dictionary \
                   import LPAbstractBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True,\
                                                 solver="GLPK")
@@ -205,7 +205,7 @@ class LPAbstractBackendDictionary(LPAbstractDictionary):
             0
             sage: d = LPAbstractBackendDictionary(b)
             sage: d.get_backend()
-            <sage.numerical.backends.glpk_backend.GLPKBackend object at ...>
+            <...GLPKBackend...>
         """
         return self._backend
 
@@ -219,7 +219,7 @@ class LPAbstractBackendDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.backends.glpk_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.glpk_backend_dictionary \
                   import LPGLPKBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True, \
                                                 solver="GLPK")
@@ -276,7 +276,7 @@ class LPAbstractBackendDictionary(LPAbstractDictionary):
 
         EXAMPLE::
 
-            sage: from sage.numerical.backends.abstract_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.abstract_backend_dictionary \
                   import LPAbstractBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True,\
                                                 solver="GLPK")
@@ -324,7 +324,7 @@ class LPAbstractBackendDictionary(LPAbstractDictionary):
 
         EXAMPLE::
 
-            sage: from sage.numerical.backends.glpk_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.glpk_backend_dictionary \
                   import LPGLPKBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True, \
                                                 solver="GLPK")

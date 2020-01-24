@@ -49,10 +49,10 @@ class LPCleanDictionary(LPAbstractDictionary):
 
     Create the clean dictionary using the backend dictionary::
 
-        sage: from sage.numerical.clean_dictionary \
+        sage: from sage_numerical_interactive_mip.clean_dictionary \
               import LPCleanDictionary
         sage: clean = LPCleanDictionary(d, epsilon=1e-5)
-        sage: TestSuite(clean).run()
+        sage: TestSuite(clean).run(skip=['_test_not_implemented_methods', '_test_pickling'])
         sage: clean
         LP problem dictionary (use typeset mode to see details)
         sage: view(clean.dictionary())  # not tested
@@ -63,7 +63,7 @@ class LPCleanDictionary(LPAbstractDictionary):
 
         TESTS::
 
-            sage: from sage.numerical.clean_dictionary \
+            sage: from sage_numerical_interactive_mip.clean_dictionary \
                   import LPCleanDictionary
             sage: p = MixedIntegerLinearProgram(names=['m'], solver="GLPK")
             sage: x = p.new_variable(nonnegative=True)
@@ -92,7 +92,7 @@ class LPCleanDictionary(LPAbstractDictionary):
 
         EXAMPLE::
 
-            sage: from sage.numerical.clean_dictionary \
+            sage: from sage_numerical_interactive_mip.clean_dictionary \
                   import LPCleanDictionary
             sage: p = MixedIntegerLinearProgram(names=['m'], solver="GLPK")
             sage: x = p.new_variable(nonnegative=True)
@@ -122,7 +122,7 @@ class LPCleanDictionary(LPAbstractDictionary):
 
         EXAMPLE::
 
-            sage: from sage.numerical.clean_dictionary \
+            sage: from sage_numerical_interactive_mip.clean_dictionary \
                   import LPCleanDictionary
             sage: p = MixedIntegerLinearProgram(names=['m'], solver="GLPK")
             sage: x = p.new_variable(nonnegative=True)
@@ -153,7 +153,7 @@ class LPCleanDictionary(LPAbstractDictionary):
 
         EXAMPLE::
 
-            sage: from sage.numerical.clean_dictionary \
+            sage: from sage_numerical_interactive_mip.clean_dictionary \
                   import LPCleanDictionary
             sage: p = MixedIntegerLinearProgram(names=['m'], solver="GLPK")
             sage: x = p.new_variable(nonnegative=True)
@@ -182,7 +182,7 @@ class LPCleanDictionary(LPAbstractDictionary):
 
         EXAMPLE::
 
-            sage: from sage.numerical.clean_dictionary \
+            sage: from sage_numerical_interactive_mip.clean_dictionary \
                   import LPCleanDictionary
             sage: p = MixedIntegerLinearProgram(names=['m'], solver="GLPK")
             sage: x = p.new_variable(nonnegative=True)
@@ -211,7 +211,7 @@ class LPCleanDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.clean_dictionary \
+            sage: from sage_numerical_interactive_mip.clean_dictionary \
                   import LPCleanDictionary
             sage: p = MixedIntegerLinearProgram(names=['m'], solver="GLPK")
             sage: x = p.new_variable(nonnegative=True)
@@ -237,7 +237,7 @@ class LPCleanDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.clean_dictionary \
+            sage: from sage_numerical_interactive_mip.clean_dictionary \
                   import LPCleanDictionary
             sage: p = MixedIntegerLinearProgram(names=['m'], solver="GLPK")
             sage: x = p.new_variable(nonnegative=True)
@@ -265,7 +265,7 @@ class LPCleanDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.clean_dictionary \
+            sage: from sage_numerical_interactive_mip.clean_dictionary \
                   import LPCleanDictionary
             sage: p = MixedIntegerLinearProgram(names=['m'], solver="GLPK")
             sage: x = p.new_variable(nonnegative=True)
@@ -294,7 +294,7 @@ class LPCleanDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.clean_dictionary \
+            sage: from sage_numerical_interactive_mip.clean_dictionary \
                   import LPCleanDictionary
             sage: p = MixedIntegerLinearProgram(names=['m'], solver="GLPK")
             sage: x = p.new_variable(nonnegative=True)
@@ -320,7 +320,7 @@ class LPCleanDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.clean_dictionary \
+            sage: from sage_numerical_interactive_mip.clean_dictionary \
                   import LPCleanDictionary
             sage: p = MixedIntegerLinearProgram(names=['m'], solver="GLPK")
             sage: x = p.new_variable(nonnegative=True)
@@ -345,7 +345,7 @@ class LPCleanDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.clean_dictionary \
+            sage: from sage_numerical_interactive_mip.clean_dictionary \
                   import LPCleanDictionary
             sage: p = MixedIntegerLinearProgram(names=['m'], solver="GLPK")
             sage: x = p.new_variable(nonnegative=True)
@@ -370,7 +370,7 @@ class LPCleanDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.clean_dictionary \
+            sage: from sage_numerical_interactive_mip.clean_dictionary \
                   import LPCleanDictionary
             sage: p = MixedIntegerLinearProgram(names=['m'], solver="GLPK")
             sage: x = p.new_variable(nonnegative=True)

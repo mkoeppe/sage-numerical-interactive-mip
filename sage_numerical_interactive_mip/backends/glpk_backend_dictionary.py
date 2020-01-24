@@ -2,7 +2,7 @@ import sage.numerical.backends.glpk_backend as backend
 from sage.numerical.backends.glpk_backend \
     import glp_bs, glp_nl, glp_nu
 from sage.modules.all import vector
-from sage.numerical.backends.abstract_backend_dictionary \
+from sage_numerical_interactive_mip.backends.abstract_backend_dictionary \
     import LPAbstractBackendDictionary
 from sage.numerical.interactive_simplex_method import variable
 
@@ -25,7 +25,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
     One needs an instance of :class:`GLPKBackend` to initialize
     this class::
 
-        sage: from sage.numerical.backends.glpk_backend_dictionary \
+        sage: from sage_numerical_interactive_mip.backends.glpk_backend_dictionary \
               import LPGLPKBackendDictionary
         sage: p = MixedIntegerLinearProgram(maximization=True, solver="GLPK")
         sage: x = p.new_variable(nonnegative=True)
@@ -43,7 +43,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
 
         TESTS::
 
-            sage: from sage.numerical.backends.glpk_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.glpk_backend_dictionary \
                   import LPGLPKBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True, \
                                                 solver="GLPK")
@@ -58,7 +58,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
         An exception will be raised if the problem is not in standard form
         i.e. with <= constraints and >= 0 variable bounds::
 
-            sage: from sage.numerical.backends.glpk_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.glpk_backend_dictionary \
                   import LPGLPKBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True, \
                                                 solver="GLPK")
@@ -85,7 +85,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
 
         Setting up the problem::
 
-            sage: from sage.numerical.backends.glpk_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.glpk_backend_dictionary \
                   import LPGLPKBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True, \
                                                 solver="GLPK")
@@ -138,7 +138,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.backends.glpk_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.glpk_backend_dictionary \
                   import LPGLPKBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True, \
                                                 solver="GLPK")
@@ -183,7 +183,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.backends.glpk_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.glpk_backend_dictionary \
                   import LPGLPKBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True, \
                                                 solver="GLPK")
@@ -259,7 +259,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.backends.glpk_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.glpk_backend_dictionary \
                   import LPGLPKBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True, \
                                                 solver="GLPK")
@@ -330,7 +330,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
 
         Setting up the problem::
 
-            sage: from sage.numerical.backends.glpk_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.glpk_backend_dictionary \
                   import LPGLPKBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True, \
                                                 solver="GLPK")
@@ -385,7 +385,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
 
         Setting up the problem::
 
-            sage: from sage.numerical.backends.glpk_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.glpk_backend_dictionary \
                   import LPGLPKBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True, \
                                                 solver="GLPK")
@@ -445,7 +445,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.backends.glpk_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.glpk_backend_dictionary \
                   import LPGLPKBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True, \
                                                 solver="GLPK")
@@ -483,7 +483,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
 
         An error will be raised if the pivot selected is zero::
 
-            sage: from sage.numerical.backends.glpk_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.glpk_backend_dictionary \
                   import LPGLPKBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True, \
                                                 solver="GLPK")
@@ -558,7 +558,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.backends.glpk_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.glpk_backend_dictionary \
                   import LPGLPKBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True, \
                                                 solver="GLPK")

@@ -1,5 +1,5 @@
 from sage.modules.all import vector
-from sage.numerical.backends.abstract_backend_dictionary \
+from sage_numerical_interactive_mip.backends.abstract_backend_dictionary \
     import LPAbstractBackendDictionary
 from sage.numerical.interactive_simplex_method import variable
 
@@ -22,7 +22,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
     One needs an instance of :class:`CoinBackend` to initialize
     this class::
 
-        sage: from sage.numerical.backends.coin_backend_dictionary \
+        sage: from sage_numerical_interactive_mip.backends.coin_backend_dictionary \
               import LPCoinBackendDictionary
         sage: p = MixedIntegerLinearProgram(maximization=True,\
                                                 solver="Coin")
@@ -40,7 +40,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
         See :class:`LPCoinBackendDictionary` for documentation.
 
         TESTS::
-            sage: from sage.numerical.backends.coin_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.coin_backend_dictionary \
                   import LPCoinBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True,\
                                                 solver="Coin")
@@ -55,7 +55,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
         An exception will be raised if the problem is not in standard form
         i.e. with <= constraints and >= 0 variable bounds::
 
-            sage: from sage.numerical.backends.coin_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.coin_backend_dictionary \
                   import LPCoinBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True,\
                                                 solver="Coin")
@@ -80,7 +80,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.backends.coin_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.coin_backend_dictionary \
                   import LPCoinBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True,\
                                                 solver="Coin")
@@ -118,7 +118,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.backends.coin_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.coin_backend_dictionary \
                   import LPCoinBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True,\
                                                 solver="Coin")
@@ -162,7 +162,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.backends.coin_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.coin_backend_dictionary \
                   import LPCoinBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True,\
                                                 solver="Coin")
@@ -211,7 +211,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.backends.coin_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.coin_backend_dictionary \
                   import LPCoinBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True,\
                                                 solver="Coin")
@@ -258,7 +258,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.backends.coin_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.coin_backend_dictionary \
                   import LPCoinBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True,\
                                                 solver="Coin")
@@ -296,7 +296,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.backends.coin_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.coin_backend_dictionary \
                   import LPCoinBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True,\
                                                 solver="Coin")
@@ -344,7 +344,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.backends.coin_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.coin_backend_dictionary \
                   import LPCoinBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True,\
                                                 solver="Coin")
@@ -379,7 +379,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
 
         An error will be raised if the pivot selected is zero::
 
-            sage: from sage.numerical.backends.coin_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.coin_backend_dictionary \
                   import LPCoinBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True,\
                                                 solver="Coin")
@@ -450,7 +450,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.backends.coin_backend_dictionary \
+            sage: from sage_numerical_interactive_mip.backends.coin_backend_dictionary \
                   import LPCoinBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True,\
                                                 solver="Coin")
