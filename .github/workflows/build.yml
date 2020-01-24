@@ -22,18 +22,20 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
+        environment: [, -python2]
     steps:
     - uses: actions/checkout@v1
     - uses: goanpeca/setup-miniconda@v1
       with:
         auto-update-conda: true
-        activate-environment: sage-nim
-        environment-file: environment.yml
+        activate-environment: sage-nim${{ matrix.environment }}
+        environment-file: environment${{ matrix.environment }}.yml
         auto-activate-base: false
     - name: Show conda info
       shell: bash -l {0}
       run: conda list
     - name: Patch in CoinBackend
+      shell: bash -l {0}
       run: sage -c 'import os; import sage.numerical.backends as dm; import sage_numerical_backends_coin.coin_backend as sm; s = sm.__file__; f = os.path.basename(s); d = os.path.join(dm.__path__[0], f); (os.path.exists(d) or os.path.lexists(d)) and os.remove(d); os.symlink(s, d);'
     - name: Test package
       shell: bash -l {0}
