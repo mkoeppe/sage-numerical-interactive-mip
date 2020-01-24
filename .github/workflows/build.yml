@@ -1,0 +1,47 @@
+name: Build and test Python package
+
+# adapted from https://github.com/mkoeppe/sage-numerical-backends-coin
+on: [push, pull_request]
+
+jobs:
+  homebrew_build_and_test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install homebrew cbc and sage
+        run: |
+          brew cask install sage --no-quarantine
+          brew install pkg-config coin-or-tools/coinor/cbc
+          brew install tox
+      - name: Test package
+        run: tox
+  conda_build_and_test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+    - uses: actions/checkout@v1
+    - uses: goanpeca/setup-miniconda@v1
+      with:
+        auto-update-conda: true
+        activate-environment: sagecoin
+        environment-file: environment.yml
+        python-version: 3.7
+        auto-activate-base: false
+    - name: Test package
+      shell: bash -l {0}
+      run: tox
+  ubuntu_sagemath_build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install SageMath and CBC
+      run: |
+        sudo DEBIAN_FRONTEND=noninteractive apt-get update
+        sudo DEBIAN_FRONTEND=noninteractive apt-get install sagemath coinor-cbc coinor-libcbc-dev python-setuptools python-sphinx cython
+    - name: Show package info
+      run: |
+        sage -python -m pip list
+    - name: Test package
+      run: tox

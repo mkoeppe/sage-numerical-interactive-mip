@@ -1,0 +1,3 @@
+setuptools
+sage-numerical-backends-coin
+tox
