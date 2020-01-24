@@ -25,7 +25,7 @@ jobs:
     - uses: goanpeca/setup-miniconda@v1
       with:
         auto-update-conda: true
-        activate-environment: sagecoin
+        activate-environment: sage-nim
         environment-file: environment.yml
         python-version: 3.7
         auto-activate-base: false
@@ -39,9 +39,8 @@ jobs:
     - name: Install SageMath and CBC
       run: |
         sudo DEBIAN_FRONTEND=noninteractive apt-get update
-        sudo DEBIAN_FRONTEND=noninteractive apt-get install sagemath coinor-cbc coinor-libcbc-dev python-setuptools python-sphinx cython
-    - name: Show package info
-      run: |
+        sudo DEBIAN_FRONTEND=noninteractive apt-get install sagemath coinor-cbc coinor-libcbc-dev python-setuptools python-sphinx tox pip
+        sage -python -m pip install --user sage-numerical-backends-coin
         sage -python -m pip list
     - name: Test package
       run: tox
