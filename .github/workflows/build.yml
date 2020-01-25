@@ -17,6 +17,7 @@ jobs:
         auto-update-conda: true
         activate-environment: sage-nim${{ matrix.environment }}
         environment-file: environment${{ matrix.environment }}.yml
+        condarc-file: condarc.yml
         auto-activate-base: false
     - name: Show conda info
       shell: bash -l {0}
