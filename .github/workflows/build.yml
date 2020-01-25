@@ -4,7 +4,7 @@ name: Build and test Python package
 on: [push, pull_request]
 
 jobs:
-  conda_build_and_test:
+  conda_sage:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -27,13 +27,13 @@ jobs:
     - name: Test package
       shell: bash -l {0}
       run: tox
-  ubuntu_sagemath_build_and_test:
+  ubuntu_sage:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - name: Install SageMath and CBC
       run: |
-        sudo DEBIAN_FRONTEND=noninteractive apt-get update
+        sudo DEBIAN_FRONTEND=noninteractive apt-get update || echo Warning... update error
         sudo DEBIAN_FRONTEND=noninteractive apt-get install sagemath coinor-cbc coinor-libcbc-dev python-setuptools python-sphinx tox python-pip
         sage -python -m pip install --user -r requirements.txt
     - name: Patch in CoinBackend
