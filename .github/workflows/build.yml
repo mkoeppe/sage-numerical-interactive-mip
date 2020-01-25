@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
-        environment: [, -python2]
+        environment: ["", -python2]
     steps:
     - uses: actions/checkout@v1
     - uses: goanpeca/setup-miniconda@v1
