@@ -37,6 +37,6 @@ jobs:
         sudo DEBIAN_FRONTEND=noninteractive apt-get install sagemath coinor-cbc coinor-libcbc-dev python-setuptools python-sphinx tox python-pip
         sage -python -m pip install --user -r requirements.txt
     - name: Patch in CoinBackend
-      run: sage -c 'import os; import sage.numerical.backends as dm; import sage_numerical_backends_coin.coin_backend as sm; s = sm.__file__; f = os.path.basename(s); d = os.path.join(dm.__path__[0], f); (os.path.exists(d) or os.path.lexists(d)) and os.remove(d); os.symlink(s, d);'
+      run: sudo sage -python -c 'import os; import sage.numerical.backends as dm; import sage_numerical_backends_coin.coin_backend as sm; s = sm.__file__; f = os.path.basename(s); d = os.path.join(dm.__path__[0], f); (os.path.exists(d) or os.path.lexists(d)) and os.remove(d); os.symlink(s, d);'
     - name: Test package
       run: tox
