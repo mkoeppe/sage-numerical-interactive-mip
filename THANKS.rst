@@ -9,6 +9,8 @@ that code, and providing many valuable comments and suggestions.
 Thanks are also due to several other reviewers on related SageMath
 tickets: Nathann Cohen, Vincent Delecroix, Dima Pasechnik.
 
+Thanks to Isuru Fernando for help with conda-forge.
+
 Peijun Xiao, Zeyi Wang, and Yuan Zhou were partially supported by the
 National Science Foundation through grant DMS-1320051, awarded to
 Matthias Koeppe.
