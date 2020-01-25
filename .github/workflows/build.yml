@@ -4,19 +4,6 @@ name: Build and test Python package
 on: [push, pull_request]
 
 jobs:
-  ## homebrew_build_and_test:
-  ##   runs-on: macos-latest
-  ##   steps:
-  ##     - uses: actions/checkout@v1
-  ##     - name: Install homebrew cbc and sage
-  ##       run: |
-  ##         brew cask install sage --no-quarantine
-  ##         brew install pkg-config coin-or-tools/coinor/cbc
-  ##         brew install tox
-  ##     - name: Patch in CoinBackend
-  ##       run: sage -c 'import os; import sage.numerical.backends as dm; import sage_numerical_backends_coin.coin_backend as sm; s = sm.__file__; f = os.path.basename(s); d = os.path.join(dm.__path__[0], f); (os.path.exists(d) or os.path.lexists(d)) and os.remove(d); os.symlink(s, d);'
-  ##     - name: Test package
-  ##       run: tox
   conda_build_and_test:
     runs-on: ${{ matrix.os }}
     strategy:
