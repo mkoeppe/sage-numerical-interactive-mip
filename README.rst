@@ -2,6 +2,13 @@
  sage-numerical-interactive-mip: Interactive mixed integer linear programming solver
 =====================================================================================
 
+.. image:: https://github.com/mkoeppe/sage-numerical-interactive-mip/workflows/Build%20and%20test%20Python%20package/badge.svg
+   :alt: [Build and test Python package]
+   :target: https://github.com/mkoeppe/sage-numerical-interactive-mip/actions/
+
+.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3627400.svg
+   :target: https://doi.org/10.5281/zenodo.3627400
+
 .. intro
 
 This package is an extension of SageMath's mixed integer linear programming
