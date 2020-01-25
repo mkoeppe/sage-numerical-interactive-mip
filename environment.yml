@@ -10,7 +10,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3
+  - python
   - sage=9.0
   - sphinx
   - sphinxcontrib-websupport
