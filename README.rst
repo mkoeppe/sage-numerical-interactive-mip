@@ -30,8 +30,8 @@ The module ``sage_numerical_interactive_mip.interactive_milp_problem``,
 written by Peijun Xiao, provides the interactive MILP problem classes,
 MILP tableau classes, and the cutting plane method. It is based on
 commit 5a4e3508d95e95e4491efcb2cf16fbe25be60bec, dated August 24, 2016,
-from the SageMath tree https://github.com/pgxiao/sage.git; this work
-superseded an earlier effort (adding integer variables in
+from the SageMath tree https://github.com/pgxiao/cutting-plane-method; 
+this work superseded an earlier effort (adding integer variables in
 ``interactive_simplex_method``) at
 https://trac.sagemath.org/ticket/18805
 
