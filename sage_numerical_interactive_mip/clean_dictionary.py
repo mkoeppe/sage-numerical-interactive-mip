@@ -16,6 +16,7 @@ from sage.rings.all import ZZ
 from sage.matrix.all import matrix
 from sage.misc.functional import round
 
+
 class LPCleanDictionary(LPAbstractDictionary):
     r"""
     Construct a clean dictionary for an LP problem from a dictionary.
@@ -52,7 +53,8 @@ class LPCleanDictionary(LPAbstractDictionary):
         sage: from sage_numerical_interactive_mip.clean_dictionary \
               import LPCleanDictionary
         sage: clean = LPCleanDictionary(d, epsilon=1e-5)
-        sage: TestSuite(clean).run(skip=['_test_not_implemented_methods', '_test_pickling'])
+        sage: TestSuite(clean).run(skip=['_test_not_implemented_methods',
+        ....:                            '_test_pickling'])
         sage: clean
         LP problem dictionary (use typeset mode to see details)
         sage: view(clean.dictionary())  # not tested
@@ -68,7 +70,7 @@ class LPCleanDictionary(LPAbstractDictionary):
             sage: p = MixedIntegerLinearProgram(names=['m'], solver="GLPK")
             sage: x = p.new_variable(nonnegative=True)
             sage: p.add_constraint(-x[0] + x[1] <= 2)
-            sage: p.add_constraint(0.001 * x[0] + 0.0005 * x[1] <= 0.0000003)
+            sage: p.add_constraint(0.001 * x[0] + 0.00056 * x[1] <= 0.0000003)
             sage: p.set_objective(-5.5 * x[0] + -2.1 * x[1])
             sage: lp, basis = p.interactive_lp_problem()
             sage: d = lp.dictionary(*basis)
@@ -88,9 +90,9 @@ class LPCleanDictionary(LPAbstractDictionary):
 
         INPUT:
 
-            - ``var`` -- the variable to be rounded
+        - ``var`` -- the variable to be rounded
 
-        EXAMPLE::
+        EXAMPLES::
 
             sage: from sage_numerical_interactive_mip.clean_dictionary \
                   import LPCleanDictionary
@@ -120,7 +122,7 @@ class LPCleanDictionary(LPAbstractDictionary):
         can be given as a string, an actual variable, or an integer
         interpreted as the index of a variable
 
-        EXAMPLE::
+        EXAMPLES::
 
             sage: from sage_numerical_interactive_mip.clean_dictionary \
                   import LPCleanDictionary
@@ -151,7 +153,7 @@ class LPCleanDictionary(LPAbstractDictionary):
         can be given as a string, an actual variable, or an integer
         interpreted as the index of a variable
 
-        EXAMPLE::
+        EXAMPLES::
 
             sage: from sage_numerical_interactive_mip.clean_dictionary \
                   import LPCleanDictionary
@@ -180,7 +182,7 @@ class LPCleanDictionary(LPAbstractDictionary):
 
             - ``iterable`` -- the list to tranverse through
 
-        EXAMPLE::
+        EXAMPLES::
 
             sage: from sage_numerical_interactive_mip.clean_dictionary \
                   import LPCleanDictionary
