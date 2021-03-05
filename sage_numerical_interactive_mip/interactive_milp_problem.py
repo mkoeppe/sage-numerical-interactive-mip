@@ -78,7 +78,7 @@ class InteractiveMILPProblem(SageObject):
     - ``is_primal`` -- (default: ``True``) whether this problem is primal or
       dual: each problem is of course dual to its own dual, this flag is mostly
       for internal use and affects default variable names only
-      
+
     - ``objective_constant_term`` -- (default: 0) a constant term of the
       objective
 
@@ -89,7 +89,7 @@ class InteractiveMILPProblem(SageObject):
       indicating if all the problem variables are integer or not, or a
       set of strings giving some problem variables' names, where those
       problem variables are integer
-    
+
     EXAMPLES:
 
     We will first construct the following problem directly:
@@ -117,7 +117,7 @@ class InteractiveMILPProblem(SageObject):
 
     Same problem, but more explicitly::
 
-        sage: P = InteractiveMILPProblem(A, b, c, ["C", "B"], constraint_type="<=", 
+        sage: P = InteractiveMILPProblem(A, b, c, ["C", "B"], constraint_type="<=",
         ....:     variable_type=">=", integer_variables=True)
 
     Even more explicitly::
@@ -126,7 +126,7 @@ class InteractiveMILPProblem(SageObject):
         ....:     constraint_type=["<=", "<="], variable_type=[">=", ">="],
         ....:     integer_variables=True)
 
-    Similar problem, but specifiying which decision variable is integer::
+    Similar problem, but specifying which decision variable is integer::
 
         sage: P = InteractiveMILPProblem(A, b, c, ["C", "B"], problem_type="max",
         ....:     constraint_type=["<=", "<="], variable_type=[">=", ">="],
@@ -136,20 +136,20 @@ class InteractiveMILPProblem(SageObject):
     as all like terms are collected and in constraints variables and constants
     are on different sides.
 
-    We will construct the same problem by calling :meth:`with_relaxation` 
+    We will construct the same problem by calling :meth:`with_relaxation`
     in :class:`InteractiveMILPProblem`::
 
         sage: R = InteractiveLPProblem(A, b, c, ["C", "B"], problem_type="max",
         ....:     constraint_type=["<=", "<="], variable_type=[">=", ">="])
         sage: P = InteractiveMILPProblem.with_relaxation(R, {'C'})
 
-    See :meth:`with_relaxation` in :class:`InteractiveMILPProblem` for more documentation. 
+    See :meth:`with_relaxation` in :class:`InteractiveMILPProblem` for more documentation.
     """
 
     def __init__(self, A=None, b=None, c=None, x="x",
-                 constraint_type="<=", variable_type="", 
-                 problem_type="max", base_ring=None, 
-                 is_primal=True, objective_constant_term=0, 
+                 constraint_type="<=", variable_type="",
+                 problem_type="max", base_ring=None,
+                 is_primal=True, objective_constant_term=0,
                  relaxation=None, integer_variables=False):
         r"""
         See :class:`InteractiveMILPProblem` for documentation.
@@ -160,7 +160,7 @@ class InteractiveMILPProblem(SageObject):
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
-            sage: P = InteractiveMILPProblem(A, b, c, ["C", "B"], constraint_type="<=", 
+            sage: P = InteractiveMILPProblem(A, b, c, ["C", "B"], constraint_type="<=",
             ....:     variable_type=">=", integer_variables=True)
             sage: TestSuite(P).run()
         """
@@ -171,13 +171,13 @@ class InteractiveMILPProblem(SageObject):
                 self._relaxation = relaxation
         else:
             self._relaxation = InteractiveLPProblem(A=A, b=b, c=c, x=x,
-                                constraint_type=constraint_type, 
-                                variable_type=variable_type, 
-                                problem_type=problem_type, 
-                                base_ring=base_ring, 
-                                is_primal=is_primal, 
+                                constraint_type=constraint_type,
+                                variable_type=variable_type,
+                                problem_type=problem_type,
+                                base_ring=base_ring,
+                                is_primal=is_primal,
                                 objective_constant_term=objective_constant_term)
-        R = PolynomialRing(self._relaxation.base_ring(), 
+        R = PolynomialRing(self._relaxation.base_ring(),
                             list(self._relaxation.Abcx()[3]), order="neglex")
         if integer_variables is False:
             self._integer_variables = set([])
@@ -321,7 +321,7 @@ class InteractiveMILPProblem(SageObject):
                                     r"\mathbb{R}")
         return lines[:-11] + r" \\" + integer_var + continuous_var + lines[-11:]
 
-    def _plot_constraint_or_cut(self, Ai, bi, ri, color, box, x, 
+    def _plot_constraint_or_cut(self, Ai, bi, ri, color, box, x,
                                alpha=0.2, pad=None, ith_cut=None):
         r"""
         Return a plot of the constraint or cut of ``self``.
@@ -398,19 +398,19 @@ class InteractiveMILPProblem(SageObject):
     def _solution(self, x):
         r"""
         Return ``x`` as a normalized solution of the relaxation of ``self``.
-        
+
         INPUT:
-                
+
         - ``x`` -- anything that can be interpreted as a solution of this
           problem, e.g. a vector or a list of correct length or a single
           element list with such a vector
-          
+
         OUTPUT:
-        
+
         - ``x`` as a vector
-        
+
         EXAMPLES::
-        
+
             sage: from sage_numerical_interactive_mip import InteractiveMILPProblem
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
@@ -722,7 +722,7 @@ class InteractiveMILPProblem(SageObject):
         else:
             raise NotImplementedError("this method is not implemented if the"
                                       "relaxation's feasible set is not bounded "
-                                      "and not all decision variables are integer")  
+                                      "and not all decision variables are integer")
 
     def integer_variables(self):
         r"""
@@ -755,9 +755,9 @@ class InteractiveMILPProblem(SageObject):
     def is_feasible(self, *x):
         r"""
         Check if ``self`` or given solution is feasible.
-        
+
         INPUT:
-        
+
         - (optional) anything that can be interpreted as a valid solution for
           the relaxation of this problem, i.e. a sequence of values for all
           decision variables
@@ -766,7 +766,7 @@ class InteractiveMILPProblem(SageObject):
 
         - When ``*x`` is given, output is ``True`` if the relaxation of this
           problem or given solution is feasible and satisfies the integrality
-          constraints , ``False`` otherwise. When ``*x`` is not given, raise 
+          constraints , ``False`` otherwise. When ``*x`` is not given, raise
           NotImplementedError
 
         EXAMPLES::
@@ -800,7 +800,7 @@ class InteractiveMILPProblem(SageObject):
                 v = self.Abcx()[3]
                 I_v = self.integer_variables().intersection(set(v))
                 if I_v == set():
-                    return True 
+                    return True
                 I_indices = [tuple(v).index(i) for i in tuple(I_v)]
                 I_values = [self._solution(x)[i] for i in I_indices]
                 return True if all(i.is_integer() for i in I_values) else False
@@ -833,7 +833,7 @@ class InteractiveMILPProblem(SageObject):
             True
         """
         return self.relaxation().is_negative()
-        
+
     def n_constraints(self):
         r"""
         Return the number of constraints of the relaxation of ``self``, i.e. `m`.
@@ -896,10 +896,10 @@ class InteractiveMILPProblem(SageObject):
             sage: P.objective_coefficients()
             (10, 5)
             sage: P.c()
-            (10, 5) 
+            (10, 5)
         """
         return self.relaxation().objective_coefficients()
-        
+
     def objective_constant_term(self):
         r"""
         Return the constant term of the objective of ``self``.
@@ -931,9 +931,9 @@ class InteractiveMILPProblem(SageObject):
     def objective_value(self, *x):
         r"""
         Return the value of the objective on the given solution of the relaxation of ``self``.
-        
+
         INPUT:
-        
+
         - anything that can be interpreted as a valid solution for the relaxation
           this problem, i.e. a sequence of values for all decision variables
 
@@ -987,7 +987,7 @@ class InteractiveMILPProblem(SageObject):
             sage: A = ([1, 1], [3, 1])
             sage: b = (100, 150)
             sage: c = (10, 5)
-            sage: P = InteractiveMILPProblem(A, b, c, 
+            sage: P = InteractiveMILPProblem(A, b, c,
             ....:     variable_type=">=", integer_variables={'x1'})
             sage: p = P.plot()
             sage: p.show()
@@ -1076,11 +1076,11 @@ class InteractiveMILPProblem(SageObject):
         number_of_constraints = number_of_inequalities - number_of_cuts
         list_of_number = [int(i+1) for i in range(number_of_inequalities)]
 
-        # Plot the contraints or cuts one by one
+        # Plot the constraints or cuts one by one
         for i, Ai, ri, bi, color, in zip(list_of_number, A.rows(),
                                          self.constraint_types(),
                                          b, colors[:-2],):
-            # Contraints are the first few number of constraints
+            # Constraints are the first few number of constraints
             # inequalities of the problem
             if i <= number_of_constraints:
                 plot_constraint = self._plot_constraint_or_cut(
@@ -1154,7 +1154,7 @@ class InteractiveMILPProblem(SageObject):
                                            ymin=None, ymax=None):
         r"""
         Return a plot with the growth of the objective function and the
-        objective solution of the relaxation of ``self``. 
+        objective solution of the relaxation of ``self``.
 
         ..Note::
 
@@ -1341,13 +1341,13 @@ class InteractiveMILPProblem(SageObject):
     def standard_form(self, transformation=False, **kwds):
         r"""
         Construct the MILP problem in standard form equivalent to ``self``.
-        
+
         INPUT:
-        
+
         - ``transformation`` -- (default: ``False``) if ``True``, a map
           converting solutions of the problem in standard form to the original
           one will be returned as well
-        
+
         - you can pass (as keywords only) ``slack_variables``,
           ``objective_name`` to the constructor of
           :class:`InteractiveMILPProblemStandardForm`
@@ -1401,7 +1401,7 @@ class InteractiveMILPProblem(SageObject):
             sage: c = (-10, -5)
             sage: P = InteractiveMILPProblem(A, b, c, variable_type=["<=", ""],
             ....:                            objective_constant_term=-42,
-            ....:                            problem_type="min", 
+            ....:                            problem_type="min",
             ....:                            integer_variables=True)
             sage: PSF, f = P.standard_form(True)
             sage: PSF.relaxation().optimal_solution()
@@ -1418,7 +1418,7 @@ class InteractiveMILPProblem(SageObject):
             sage: A = ([1, 1, 5/2], [2, 3/4, 4], [3/5, 1, 6])
             sage: b = (1000, 1500, 2000)
             sage: c = (10, 5, 3)
-            sage: P = InteractiveMILPProblem(A, b, c, variable_type=[">=", "<=", ""], 
+            sage: P = InteractiveMILPProblem(A, b, c, variable_type=[">=", "<=", ""],
             ....:                            integer_variables=True)
             sage: PSF, f = P.standard_form(True)
             sage: P.integer_variables()
@@ -1429,7 +1429,7 @@ class InteractiveMILPProblem(SageObject):
         """
         if transformation:
             (P, f) = self.relaxation().standard_form(transformation=transformation, **kwds)
-        else:   
+        else:
             P = self.relaxation().standard_form(transformation=transformation, **kwds)
         # assign integer variables to standard form
         I = self.integer_variables()
@@ -1532,14 +1532,14 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
     - ``is_primal`` -- (default: ``True``) whether this problem is primal or
       dual: each problem is of course dual to its own dual, this flag is mostly
       for internal use and affects default variable names only
-      
+
     - ``objective_name`` -- a string or a symbolic expression for the
       objective used in dictionaries, default depending on :func:`style`
 
     - ``objective_constant_term`` -- (default: 0) a constant term of the
       objective
 
-    - ``relaxation`` -- (default: None) 
+    - ``relaxation`` -- (default: None)
       an :class:`LP problem in standard form <InteractiveLPProblemStandardForm>`
       as the relaxation of the problem
 
@@ -1569,7 +1569,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
         sage: P.slack_variables()
         (x3, x4)
 
-    We will construct the same problem by calling :meth:`with_relaxation` 
+    We will construct the same problem by calling :meth:`with_relaxation`
     in :class:`InteractiveMILPProblemStandardForm`::
 
         sage: R = InteractiveLPProblemStandardForm(A, b, c)
@@ -1581,9 +1581,9 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
     def __init__(self, A=None, b=None, c=None, x="x",
                  problem_type="max", slack_variables=None,
-                 base_ring=None, is_primal=True, 
+                 base_ring=None, is_primal=True,
                  objective_name=None,
-                 objective_constant_term=0, 
+                 objective_constant_term=0,
                  relaxation=None, integer_variables=False):
         r"""
         See :class:`InteractiveMILPProblemStandardForm` for documentation.
@@ -1605,9 +1605,9 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
                 self._relaxation = relaxation
         else:
             self._relaxation = InteractiveLPProblemStandardForm(
-                                A=A, b=b, c=c, x=x, 
+                                A=A, b=b, c=c, x=x,
                                 problem_type=problem_type,
-                                slack_variables=slack_variables, 
+                                slack_variables=slack_variables,
                                 base_ring=base_ring,
                                 is_primal=is_primal,
                                 objective_name=objective_name,
@@ -1628,8 +1628,8 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             for v in integer_variables:
                 self._integer_variables.add(variable(R, v))
         # if there is no assigned integer slack variables by the user
-        # use sufficient conditions to assign slack variables to be integer        
-        if not self._integer_variables.intersection(set(slack_variables)): 
+        # use sufficient conditions to assign slack variables to be integer
+        if not self._integer_variables.intersection(set(slack_variables)):
             if self._integer_variables.intersection(set(x)) == set(x):
                 for i in range (m):
                     if b[i].is_integer() and all(coef.is_integer() for coef in A[i]):
@@ -1645,7 +1645,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
                         set_Ai.remove(A[i][j])
                         if A[i][j].is_integer() and set_Ai == {0}:
                             self._integer_variables.add(x[j])
-                        
+
     @classmethod
     def with_relaxation(cls, relaxation, integer_variables=False):
         r"""
@@ -1811,7 +1811,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
         INPUT:
 
         - ``dictionary`` -- a :class:`dictionary <LPDictionary>` or
-          a :class:`revised dictionary <LPRevisedDictionary>` 
+          a :class:`revised dictionary <LPRevisedDictionary>`
 
         - ``integer_variables`` -- a set of integer variables for the dictionary
 
@@ -1842,7 +1842,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             sage: P = InteractiveMILPProblemStandardForm(A, b, c,
             ....: integer_variables=True)
             sage: D = P.final_dictionary()
-            sage: D1, I1 = P.add_a_cut(D, P.integer_variables(), 
+            sage: D1, I1 = P.add_a_cut(D, P.integer_variables(),
             ....: separator="gomory_fractional")
             sage: D1.leave(D1.basic_variables()[-1])
             sage: D1.leaving_coefficients()
@@ -1858,8 +1858,8 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             {x1, x2, x3, x4, x5}
 
         The new slack variable is continuous if we use Gomory mixed integer cut::
-            
-            sage: D2, I2 = P.add_a_cut(D, P.integer_variables(), 
+
+            sage: D2, I2 = P.add_a_cut(D, P.integer_variables(),
             ....: separator="gomory_mixed_integer")
             sage: I2
             {x1, x2, x3, x4}
@@ -1881,7 +1881,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             ValueError: chosen variable should be an integer variable
 
 
-        2) a non-integer variable is among the nonbasic variables 
+        2) a non-integer variable is among the nonbasic variables
            with non-zero coefficients on the source row::
 
             sage: A = ([1, 3, 5], [2, 6, 9], [6, 8, 3])
@@ -2092,9 +2092,9 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
     def final_dictionary(self):
         r"""
-        Return the final dictionary of the simplex method applied to 
+        Return the final dictionary of the simplex method applied to
         the relaxation of ``self``.
-        
+
         See :meth:`run_simplex_method` for the description of possibilities.
 
         OUTPUT:
@@ -2145,7 +2145,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
         TESTS::
 
             sage: P.final_revised_dictionary() is P.final_revised_dictionary()
-            False 
+            False
         """
         return self.relaxation().final_revised_dictionary()
 
@@ -2288,7 +2288,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
         Return the objective name used in dictionaries for this problem.
 
         OUTPUT:
-        
+
         - a symbolic expression
 
         EXAMPLES::
@@ -2408,10 +2408,10 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
                 temp_index = fraction_list.index(min(fraction_list))
                 # Temp index will change as long as we remove the variable of
                 # the ineglible source row from the fraction list and the
-                # variable lsit
+                # variable list
                 choose_variable = variable_list[temp_index]
                 index = list_B.index(choose_variable)
-                # Index wil not change, since we don't modify the
+                # Index will not change, since we don't modify the
                 # list of basic variables
                 if eligible_source_row(choose_variable, b[index]):
                     break
@@ -2447,7 +2447,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
     def revised_dictionary(self, *x_B):
         r"""
         Construct a revised dictionary for the relaxation of ``self``.
-    
+
         INPUT:
 
         - basic variables for the dictionary to be constructed; if not given,
@@ -2499,7 +2499,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         - ``show_steps`` -- (default:False) a boolean value to decide
           whether to return each step of the cutting plane method or not.
-          When ``show_steps`` is ``True``, plot each new problem 
+          When ``show_steps`` is ``True``, plot each new problem
           when using revised dictionary
 
         - ``xmin``, ``xmax``, ``ymin``, ``ymax`` -- bounds for the axes, if
@@ -2517,7 +2517,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
           depending on the ``revised``
 
         - :class:`~sage.misc.html.HtmlFragment` with HTML/`\LaTeX` code of
-          all encountered dictionaries if ``show_steps`` is ``True``    
+          all encountered dictionaries if ``show_steps`` is ``True``
 
         EXAMPLES::
 
@@ -2527,7 +2527,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             sage: c = (55/10, 21/10)
             sage: P = InteractiveMILPProblemStandardForm(A, b, c,
             ....: integer_variables=True)
-            sage: n, D, output = P.run_cutting_plane_method(separator="gomory_fractional", 
+            sage: n, D, output = P.run_cutting_plane_method(separator="gomory_fractional",
             ....: revised=True, plot=True, show_steps=True, xmin=-2, xmax=6, ymin=0, ymax=12)
             sage: n
             5
@@ -2602,7 +2602,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
         while True:
             D, I = self.add_a_cut(D, I, separator=separator)
             n += 1
-            
+
             if show_steps:
                 output.append("After adding cut " + str(n))
                 if revised and plot:   # show the cut in problem form when using LPRevisedDictionary
@@ -2610,9 +2610,9 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
                                             D._problem, integer_variables=I)
                     output.append("i.e.")
                     output.append(r"${}$".format(
-                                 _latex_product(P.Abcx()[0].rows()[-1], 
+                                 _latex_product(P.Abcx()[0].rows()[-1],
                                                 P.Abcx()[3],
-                                                " ", 
+                                                " ",
                                                 tail=[P.constraint_types()[-1], P.Abcx()[1][-1]])))
                     result = P.plot(number_of_cuts=n, *args, **kwds)
                     result.show()
@@ -2621,13 +2621,13 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
                 output.append(D._html_())
                 D._leaving = None # undo D.leave
                 output.append("Run the dual simplex to restore primal feasibility.")
-            
+
             D.run_dual_simplex_method()
-            
+
             if show_steps:
                 output.append("The dictionary becomes:")
                 output.append(D._html_())
-            
+
             B = D.basic_variables()
             I_basic = set(B).intersection(I)
             I_indices = [tuple(B).index(v) for v in tuple(I_basic)]
@@ -2645,7 +2645,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             output.append("The dictionary now is feasible and optimal, as well as integer feasibility.")
             output.append(("The optimal value: ${}$. "
                            "An optimal solution: ${}$.").format(
-                           latex(- D.objective_value() if self.is_negative() else D.objective_value()), 
+                           latex(- D.objective_value() if self.is_negative() else D.objective_value()),
                            latex(D.basic_solution())))
         # we only plot the final problem when we use revised dictionary
         # since only revised dictionary knows the original problem variables
@@ -2706,7 +2706,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             \begin{equation*}
             ...
             \end{equation*}
-            The optimal value: $6250$. An optimal solution: $\left(250,\,750\right)$. 
+            The optimal value: $6250$. An optimal solution: $\left(250,\,750\right)$.
         """
         return self.relaxation().run_revised_simplex_method()
 
@@ -2757,7 +2757,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             ...
             Entering: $x_{2}$. Leaving: $x_{3}$.
             ...
-            The optimal value: $6250$. An optimal solution: $\left(250,\,750\right)$. 
+            The optimal value: $6250$. An optimal solution: $\left(250,\,750\right)$.
         """
         return self.relaxation().run_simplex_method()
 
@@ -2787,12 +2787,12 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             sage: P = InteractiveMILPProblemStandardForm(A, b, c, ["C", "B"],
             ....:     slack_variables=["L", "F"])
             sage: P.slack_variables()
-            (L, F) 
+            (L, F)
         """
         return self.relaxation().slack_variables()
 
 # FIXME: Current code is inefficient to deal with dictionaries.
 # In :meth:`run_cutting_plane_method`, one now has to check all the basic
-# variables are integer or not. 
+# variables are integer or not.
 # It will be more efficient to check only the problem_variables.
 # A better dictionary interface would help.
