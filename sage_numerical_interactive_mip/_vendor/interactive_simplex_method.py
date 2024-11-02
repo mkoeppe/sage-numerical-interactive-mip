@@ -203,6 +203,7 @@ from sage.rings.polynomial.polynomial_ring_constructor import PolynomialRing
 from sage.rings.polynomial.polynomial_element import Polynomial
 from sage.rings.rational_field import QQ
 from sage.rings.integer_ring import ZZ
+from sage.rings.real_double import RDF
 from sage.structure.all import SageObject
 
 
@@ -1552,7 +1553,8 @@ class InteractiveLPProblem(SageObject):
         start = vector(QQ, start.n() if start is not None
                             else [xmin + (xmax-xmin)/2, ymin + (ymax-ymin)/2])
         length = min(xmax - xmin, ymax - ymin) / 5
-        end = start + (c * length / c.norm()).n().change_ring(QQ)
+        c = RDF(1) * c
+        end = start + (c * length / c.norm()).change_ring(QQ)
         result = FP + point(start, color='black', size=50, zorder=10)
         result += arrow(start, end, color='black', zorder=10)
         ieqs = [(xmax, -1, 0), (- xmin, 1, 0),
@@ -1640,9 +1642,9 @@ class InteractiveLPProblem(SageObject):
             label = r"${}$".format(_latex_product(Ai, x, " ", tail=[ri, bi]))
             result += line(vertices, color=color, legend_label=label)
             if ri == "<=":
-                ieqs = [[bi] + list(-Ai), [-bi+pad*Ai.norm().n()] + list(Ai)]
+                ieqs = [[bi] + list(-Ai), [-bi + (RDF(pad)*Ai).norm()] + list(Ai)]
             elif ri == ">=":
-                ieqs = [[-bi] + list(Ai), [bi+pad*Ai.norm().n()] + list(-Ai)]
+                ieqs = [[-bi] + list(Ai), [bi + (RDF(pad)*Ai).norm()] + list(-Ai)]
             else:
                 continue
             ieqs = [ [QQ(_) for _ in ieq] for ieq in ieqs]
