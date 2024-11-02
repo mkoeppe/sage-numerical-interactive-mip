@@ -1,4 +1,4 @@
-from sage.numerical.interactive_simplex_method import *
+from sage_numerical_interactive_mip._vendor.interactive_simplex_method import *
 
 
 class LPAbstractBackendDictionary(LPAbstractDictionary):

@@ -4,7 +4,7 @@ from sage.numerical.backends.glpk_backend \
 from sage.modules.free_module_element import free_module_element as vector
 from sage_numerical_interactive_mip.backends.abstract_backend_dictionary \
     import LPAbstractBackendDictionary
-from sage.numerical.interactive_simplex_method import variable
+from sage_numerical_interactive_mip._vendor.interactive_simplex_method import variable
 
 class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
     r"""

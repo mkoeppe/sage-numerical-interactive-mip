@@ -1,7 +1,7 @@
 from copy import copy
 from sage.misc.html import HtmlFragment
-from sage.numerical.interactive_simplex_method import *
-from sage.numerical.interactive_simplex_method import _latex_product
+from sage_numerical_interactive_mip._vendor.interactive_simplex_method import *
+from sage_numerical_interactive_mip._vendor.interactive_simplex_method import _latex_product
 from sage.plot.all import Graphics, arrow, line, point, rainbow, text
 from sage.rings.infinity import Infinity
 from sage.rings.polynomial.polynomial_ring_constructor import PolynomialRing
@@ -2304,12 +2304,12 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             sage: P = InteractiveMILPProblemStandardForm(A, b, c)
             sage: P.objective_name()
             z
-            sage: sage.numerical.interactive_simplex_method.style("Vanderbei")
+            sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style("Vanderbei")
             'Vanderbei'
             sage: P = InteractiveMILPProblemStandardForm(A, b, c)
             sage: P.objective_name()
             zeta
-            sage: sage.numerical.interactive_simplex_method.style("UAlberta")
+            sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style("UAlberta")
             'UAlberta'
             sage: P = InteractiveMILPProblemStandardForm(A, b, c, objective_name="custom")
             sage: P.objective_name()
@@ -2536,7 +2536,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             sage: n
             5
             sage: type(D)
-            <class 'sage.numerical.interactive_simplex_method.LPRevisedDictionary'>
+            <class 'sage_numerical_interactive_mip._vendor.interactive_simplex_method.LPRevisedDictionary'>
             sage: output
             The original problem is:
             \begin{equation*}
@@ -2580,7 +2580,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             sage: n
             9
             sage: type(D)
-            <class 'sage.numerical.interactive_simplex_method.LPDictionary'>
+            <class 'sage_numerical_interactive_mip._vendor.interactive_simplex_method.LPDictionary'>
         """
         n = 0
         D = self.final_revised_dictionary() if revised else self.final_dictionary()

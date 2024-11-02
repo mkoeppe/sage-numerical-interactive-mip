@@ -9,7 +9,7 @@ extension, it also changes almost-integers to exact integers, for the
 benefit of mixed-integer programming.
 """
 
-from sage.numerical.interactive_simplex_method \
+from sage_numerical_interactive_mip._vendor.interactive_simplex_method \
     import LPDictionary, LPAbstractDictionary
 from sage.modules.free_module_element import free_module_element as vector
 from sage.rings.integer_ring import Z as ZZ
