@@ -3,6 +3,11 @@ name: Build and test Python package
 # adapted from https://github.com/mkoeppe/sage-numerical-backends-coin
 on: [push, pull_request]
 
+concurrency:
+  # Cancel previous runs of this workflow for the same branch
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   passagemath:
     runs-on: ubuntu-latest
