@@ -30,6 +30,10 @@ coin = [
     "passagemath-polyhedra[coin]",
 ]
 
+docs = [
+    "sphinx",
+]
+
 [project.readme]
 file = "README.rst"
 content-type = "text/x-rst"
