@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sage_numerical_interactive_mip"
+version = "0.2.1"
+description = "Interactive mixed integer linear programming solver"
+license = {text = "GNU General Public License (GPL) v2 or later"}
+authors = [
+    {name = "Peijun Xiao"},
+    {name = "Zeyi Wang"},
+    {name = "Yuan Zhou"},
+    {name = "Matthias Koeppe", email = "mkoeppe@math.ucdavis.edu"},
+]
+keywords = [
+    "milp",
+    "linear-programming",
+    "optimization",
+]
+
+[project.readme]
+file = "README.rst"
+content-type = "text/x-rst"
+
+[project.urls]
+Homepage = "https://github.com/mkoeppe/sage-numerical-interactive-mip"
+
+[tool.setuptools]
+packages = ["sage_numerical_interactive_mip"]
+include-package-data = false
