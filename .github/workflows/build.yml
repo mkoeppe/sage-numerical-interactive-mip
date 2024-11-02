@@ -1,31 +1,27 @@
 name: Build and test Python package
 
-# adapted from https://github.com/mkoeppe/sage-numerical-backends-coin
-on: [push, pull_request]
+on:
+  pull_request:
+  merge_group:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+    # Allow to run manually
+
+concurrency:
+  # Cancel previous runs of this workflow for the same branch
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  conda_sage:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest]
-        python-version: ['3.11']
+  passagemath:
+    runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v4
-    - uses: conda-incubator/setup-miniconda@v3
-      with:
-        auto-update-conda: true
-        activate-environment: sage-nim
-        environment-file: environment.yml
-        condarc-file: condarc.yml
-        auto-activate-base: false
-        python-version: ${{ matrix.python-version }}
-    - name: Show conda info
-      shell: bash -l {0}
-      run: conda list
-    - name: Patch in CoinBackend
-      shell: bash -l {0}
-      run: sage -c 'import os; import sage.numerical.backends as dm; import sage_numerical_backends_coin.coin_backend as sm; s = sm.__file__; f = os.path.basename(s); d = os.path.join(dm.__path__[0], f); (os.path.exists(d) or os.path.lexists(d)) and os.remove(d); os.symlink(s, d);'
-    - name: Test package
-      shell: bash -l {0}
-      run: tox
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+      - name: Install test prerequisites
+        run: pip install tox
+      - name: Test package
+        run: tox -e passagemath
