@@ -228,7 +228,7 @@ def _assemble_arrayl(lines, stretch=None):
 
     EXAMPLES::
 
-        sage: from sage.numerical.interactive_simplex_method \
+        sage: from sage_numerical_interactive_mip._vendor.interactive_simplex_method \
         ....:     import _assemble_arrayl
         sage: lines = ["1 + 1", "2"]
         sage: print(_assemble_arrayl(lines))
@@ -295,7 +295,7 @@ def _latex_product(coefficients, variables,
 
     TESTS::
 
-        sage: from sage.numerical.interactive_simplex_method import \
+        sage: from sage_numerical_interactive_mip._vendor.interactive_simplex_method import \
         ....:       _latex_product
         sage: var("x, y")                                                               # needs sage.symbolic
         (x, y)
@@ -371,7 +371,7 @@ def variable(R, v):
 
     EXAMPLES::
 
-        sage: from sage.numerical.interactive_simplex_method \
+        sage: from sage_numerical_interactive_mip._vendor.interactive_simplex_method \
         ....:     import variable
         sage: R = PolynomialRing(QQ, "x3, y5, x5, y")
         sage: R.inject_variables()
@@ -457,13 +457,13 @@ def default_variable_name(variable):
 
     EXAMPLES::
 
-        sage: sage.numerical.interactive_simplex_method.default_variable_name("primal slack")
+        sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.default_variable_name("primal slack")
         'x'
-        sage: sage.numerical.interactive_simplex_method.style('Vanderbei')
+        sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style('Vanderbei')
         'Vanderbei'
-        sage: sage.numerical.interactive_simplex_method.default_variable_name("primal slack")
+        sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.default_variable_name("primal slack")
         'w'
-        sage: sage.numerical.interactive_simplex_method.style('UAlberta')
+        sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style('UAlberta')
         'UAlberta'
     """
     return available_styles[current_style][variable]
@@ -530,15 +530,15 @@ def style(new_style=None):
 
     EXAMPLES::
 
-        sage: sage.numerical.interactive_simplex_method.style()
+        sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style()
         'UAlberta'
-        sage: sage.numerical.interactive_simplex_method.style('Vanderbei')
+        sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style('Vanderbei')
         'Vanderbei'
-        sage: sage.numerical.interactive_simplex_method.style('Doesntexist')
+        sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style('Doesntexist')
         Traceback (most recent call last):
         ...
         ValueError: Style must be one of: UAlberta, Vanderbei
-        sage: sage.numerical.interactive_simplex_method.style('UAlberta')
+        sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style('UAlberta')
         'UAlberta'
     """
     global current_style
@@ -1107,11 +1107,11 @@ class InteractiveLPProblem(SageObject):
 
             sage: DP.standard_form().objective_name()
             -z
-            sage: sage.numerical.interactive_simplex_method.style("Vanderbei")
+            sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style("Vanderbei")
             'Vanderbei'
             sage: P.dual().standard_form().objective_name()
             -xi
-            sage: sage.numerical.interactive_simplex_method.style("UAlberta")
+            sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style("UAlberta")
             'UAlberta'
             sage: P.dual().standard_form().objective_name()
             -z
@@ -2447,12 +2447,12 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
             sage: P = InteractiveLPProblemStandardForm(A, b, c)
             sage: P.objective_name()
             z
-            sage: sage.numerical.interactive_simplex_method.style("Vanderbei")
+            sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style("Vanderbei")
             'Vanderbei'
             sage: P = InteractiveLPProblemStandardForm(A, b, c)
             sage: P.objective_name()
             zeta
-            sage: sage.numerical.interactive_simplex_method.style("UAlberta")
+            sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style("UAlberta")
             'UAlberta'
             sage: P = InteractiveLPProblemStandardForm(A, b, c, objective_name='custom')
             sage: P.objective_name()
@@ -3844,7 +3844,7 @@ class LPDictionary(LPAbstractDictionary):
         sage: b = vector(QQ, (1000, 1500))
         sage: c = vector(QQ, (10, 5))
         sage: R = PolynomialRing(QQ, "x1, x2, x3, x4", order='neglex')
-        sage: from sage.numerical.interactive_simplex_method \
+        sage: from sage_numerical_interactive_mip._vendor.interactive_simplex_method \
         ....:     import LPDictionary
         sage: D2 = LPDictionary(A, b, c, 0, R.gens()[2:], R.gens()[:2], "z")
         sage: D2 == D
@@ -3863,7 +3863,7 @@ class LPDictionary(LPAbstractDictionary):
             sage: b = vector(QQ, (1000, 1500))
             sage: c = vector(QQ, (10, 5))
             sage: R = PolynomialRing(QQ, "x1, x2, x3, x4", order='neglex')
-            sage: from sage.numerical.interactive_simplex_method \
+            sage: from sage_numerical_interactive_mip._vendor.interactive_simplex_method \
             ....:     import LPDictionary
             sage: D = LPDictionary(A, b, c, 0, R.gens()[2:], R.gens()[:2], "z")
             sage: TestSuite(D).run()
@@ -3925,7 +3925,7 @@ class LPDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
-            sage: from sage.numerical.interactive_simplex_method \
+            sage: from sage_numerical_interactive_mip._vendor.interactive_simplex_method \
             ....:     import random_dictionary
             sage: random_dictionary(3, 4)  # indirect doctest
             LP problem dictionary (use 'view(...)' or '%display typeset' for details)
@@ -3969,7 +3969,7 @@ class LPDictionary(LPAbstractDictionary):
             sage: b = vector(QQ, (1000, 1500))
             sage: c = vector(QQ, (10, 5))
             sage: R = PolynomialRing(QQ, "x1, x2, x3, x4", order='neglex')
-            sage: from sage.numerical.interactive_simplex_method \
+            sage: from sage_numerical_interactive_mip._vendor.interactive_simplex_method \
             ....:     import LPDictionary
             sage: D2 = LPDictionary(A, b, c, 0, R.gens()[2:], R.gens()[:2], "z")
             sage: D2 == D
@@ -4420,7 +4420,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
         sage: b = (1000, 1500)
         sage: c = (10, 5)
         sage: P = InteractiveLPProblemStandardForm(A, b, c)
-        sage: from sage.numerical.interactive_simplex_method \
+        sage: from sage_numerical_interactive_mip._vendor.interactive_simplex_method \
         ....:     import LPRevisedDictionary
         sage: D = LPRevisedDictionary(P, [1, 2])
         sage: D.basic_variables()
@@ -4473,7 +4473,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
             sage: b = (1000, 1500)
             sage: c = (10, 5)
             sage: P = InteractiveLPProblemStandardForm(A, b, c)
-            sage: from sage.numerical.interactive_simplex_method \
+            sage: from sage_numerical_interactive_mip._vendor.interactive_simplex_method \
             ....:     import LPRevisedDictionary
             sage: D = LPRevisedDictionary(P, [1, 2])
             sage: TestSuite(D).run()
@@ -4506,7 +4506,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
             sage: b = (1000, 1500)
             sage: c = (10, 5)
             sage: P = InteractiveLPProblemStandardForm(A, b, c)
-            sage: from sage.numerical.interactive_simplex_method \
+            sage: from sage_numerical_interactive_mip._vendor.interactive_simplex_method \
             ....:     import LPRevisedDictionary
             sage: D1 = LPRevisedDictionary(P, [1, 2])
             sage: D2 = LPRevisedDictionary(P, [1, 2])
