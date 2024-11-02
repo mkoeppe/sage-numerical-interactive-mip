@@ -1049,13 +1049,13 @@ class InteractiveMILPProblem(SageObject):
             sage: c = (10, 5)
             sage: P = InteractiveLPProblem(A, b, c, ["C", "B"], variable_type=">=")
             sage: P1 = InteractiveMILPProblem.with_relaxation(P, True)
-            sage: p = P1.plot_feasible_set()
-            sage: p.show()
+            sage: p = P1.plot_feasible_set()                                            # known bug (segfault)
+            sage: p.show()                                                              # known bug
 
         In this case the plot works better with the following axes ranges::
 
-            sage: p = P1.plot_feasible_set(0, 1000, 0, 1500)
-            sage: p.show()
+            sage: p = P1.plot_feasible_set(0, 1000, 0, 1500)                            # known bug
+            sage: p.show()                                                              # known bug
         """
         if self.n() != 2:
             raise ValueError("only problems with 2 variables can be plotted")
