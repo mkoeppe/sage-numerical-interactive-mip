@@ -48,8 +48,9 @@ merged.
 How to use
 ==========
 
-This needs a working SageMath; install, for example, from conda-forge as
-described in http://doc.sagemath.org/html/en/installation/conda.html
+This package uses modularized distributions of portions of the Sage library.
+No installation of SageMath is required.
+Just install the package with ``pip``.
 
 The code comes with extensive documentation and tests; see the
 docstrings in the modules.
@@ -57,7 +58,6 @@ docstrings in the modules.
 How to run the testsuite and build the HTML documentation
 =========================================================
 
-Install ``tox``, make sure that ``sage`` is accessible in your ``PATH``
-and then run ``tox``.
+Install ``tox`` with ``pip``, then run ``tox``.
 
 This also builds the documentation in ``.tox/docs/tmp/html/index.html``.
