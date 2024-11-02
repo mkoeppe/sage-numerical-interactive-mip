@@ -22,6 +22,7 @@ dependencies = [
     "passagemath-polyhedra",
     "passagemath-plot",
     "passagemath-repl",
+    "passagemath-flint",
 ]
 
 [project.optional-dependencies]
