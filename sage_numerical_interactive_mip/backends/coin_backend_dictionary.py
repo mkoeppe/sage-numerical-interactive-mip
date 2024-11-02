@@ -1,6 +1,6 @@
 # sage.doctest: optional - sage_numerical_backends_coin
 
-from sage.modules.all import vector
+from sage.modules.free_module_element import free_module_element as vector
 from sage_numerical_interactive_mip.backends.abstract_backend_dictionary \
     import LPAbstractBackendDictionary
 from sage.numerical.interactive_simplex_method import variable

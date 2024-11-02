@@ -3,7 +3,11 @@ from sage.misc.html import HtmlFragment
 from sage.numerical.interactive_simplex_method import *
 from sage.numerical.interactive_simplex_method import _latex_product
 from sage.plot.all import Graphics, arrow, line, point, rainbow, text
-from sage.rings.all import Infinity, PolynomialRing, QQ, RDF, ZZ
+from sage.rings.infinity import Infinity
+from sage.rings.polynomial.polynomial_ring_constructor import PolynomialRing
+from sage.rings.rational_field import Q as QQ
+from sage.rings.real_double import RDF
+from sage.rings.integer_ring import Z as ZZ
 
 def _form_thin_long_triangle(k):
     r"""

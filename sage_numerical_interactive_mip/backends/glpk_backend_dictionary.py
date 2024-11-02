@@ -1,7 +1,7 @@
 import sage.numerical.backends.glpk_backend as backend
 from sage.numerical.backends.glpk_backend \
     import glp_bs, glp_nl, glp_nu
-from sage.modules.all import vector
+from sage.modules.free_module_element import free_module_element as vector
 from sage_numerical_interactive_mip.backends.abstract_backend_dictionary \
     import LPAbstractBackendDictionary
 from sage.numerical.interactive_simplex_method import variable

@@ -11,9 +11,9 @@ benefit of mixed-integer programming.
 
 from sage.numerical.interactive_simplex_method \
     import LPDictionary, LPAbstractDictionary
-from sage.modules.all import vector
-from sage.rings.all import ZZ
-from sage.matrix.all import matrix
+from sage.modules.free_module_element import free_module_element as vector
+from sage.rings.integer_ring import Z as ZZ
+from sage.matrix.constructor import Matrix as matrix
 from sage.misc.functional import round
 
 
