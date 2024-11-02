@@ -4,6 +4,17 @@ name: Build and test Python package
 on: [push, pull_request]
 
 jobs:
+  passagemath:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+      - name: Install test prerequisites
+        run: pip install tox
+      - name: Test package
+        run: tox
+
   conda_sage:
     runs-on: ${{ matrix.os }}
     strategy:
