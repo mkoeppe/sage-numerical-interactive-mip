@@ -56,7 +56,7 @@ class LPCleanDictionary(LPAbstractDictionary):
         sage: TestSuite(clean).run(skip=['_test_not_implemented_methods',
         ....:                            '_test_pickling'])
         sage: clean
-        LP problem dictionary (use typeset mode to see details)
+        LP problem dictionary (use ... details)
         sage: view(clean.dictionary())  # not tested
     """
     def __init__(self, dictionary, epsilon=1e-9):
@@ -77,7 +77,7 @@ class LPCleanDictionary(LPAbstractDictionary):
             sage: view(d)  # not tested
             sage: clean = LPCleanDictionary(d, epsilon=1e-5)
             sage: clean
-            LP problem dictionary (use typeset mode to see details)
+            LP problem dictionary (use ... details)
             sage: view(clean.dictionary())  # not tested
         """
         super(LPCleanDictionary, self).__init__()

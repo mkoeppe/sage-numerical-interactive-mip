@@ -35,7 +35,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
         sage: b = p.get_backend()
         sage: d = LPCoinBackendDictionary(b)
         sage: d
-        LP problem dictionary (use typeset mode to see details)
+        LP problem dictionary (use ... details)
     """
     def __init__(self, backend):
         r"""

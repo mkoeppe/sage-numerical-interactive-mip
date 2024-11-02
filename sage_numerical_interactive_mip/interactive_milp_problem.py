@@ -214,7 +214,7 @@ class InteractiveMILPProblem(SageObject):
             sage: P = InteractiveLPProblem(A, b, c, variable_type=">=")
             sage: P1 = InteractiveMILPProblem.with_relaxation(P, True)
             sage: P1
-            MILP problem (use typeset mode to see details)
+            MILP problem (use ... details)
             sage: P == P1.relaxation()
             True
         """
@@ -391,9 +391,9 @@ class InteractiveMILPProblem(SageObject):
             sage: c = (10, 5)
             sage: P = InteractiveMILPProblem(A, b, c, variable_type=">=", integer_variables={"x1"})
             sage: print(P._repr_())
-            MILP problem (use typeset mode to see details)
+            MILP problem (use ... details)
         """
-        return "MILP problem (use typeset mode to see details)"
+        return "MILP problem (use ... details)"
 
     def _solution(self, x):
         r"""
@@ -1673,7 +1673,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
             sage: P = InteractiveLPProblemStandardForm(A, b, c)
             sage: P1 = InteractiveMILPProblemStandardForm.with_relaxation(P, True)
             sage: P1
-            MILP problem (use typeset mode to see details)
+            MILP problem (use ... details)
             sage: P == P1.relaxation()
             True
         """

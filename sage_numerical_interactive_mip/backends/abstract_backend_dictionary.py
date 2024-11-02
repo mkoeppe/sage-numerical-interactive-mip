@@ -30,7 +30,7 @@ class LPAbstractBackendDictionary(LPAbstractDictionary):
         sage: b = p.get_backend()
         sage: d = LPAbstractBackendDictionary(b)
         sage: d
-        LP problem dictionary (use typeset mode to see details)
+        LP problem dictionary (use ... details)
     """
     def __init__(self, backend):
         super(LPAbstractBackendDictionary, self).__init__()
