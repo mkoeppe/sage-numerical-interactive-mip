@@ -16,8 +16,8 @@
 # General information about the project.
 import six
 
-project = u"sage-numerical-interactive-mip"
-authors = copyright = u'2015-2016 Peijun Xiao, 2020 Matthias Koeppe'
+project = "sage-numerical-interactive-mip"
+authors = copyright = '2015-2016 Peijun Xiao, 2020 Matthias Koeppe'
 package_name = 'sage_numerical_interactive_mip'
 package_folder = "../../"
 
@@ -27,7 +27,7 @@ import os
 from sage.env import SAGE_DOC_SRC, SAGE_DOC, SAGE_SRC
 
 try:
-    import sage.all
+    import sage.all__sagemath_modules
 except ImportError:
     raise RuntimeError("to build the documentation you need to be inside a Sage shell (run first the command 'sage -sh' in a shell")
 
@@ -154,13 +154,8 @@ master_doc = 'index'
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
-from pkg_resources import get_distribution, DistributionNotFound
-# The full version, including alpha/beta/rc tags.
-try:
-    release = get_distribution('sage-numerical-interactive-mip').version
-except DistributionNotFound:
-    release = "0.2"
-#print("############# release reported: {} ##################".format(release))
+from importlib.metadata import version as _version
+release = _version('sage-numerical-interactive-mip')
 # The short X.Y version.
 version = '.'.join(release.split('.')[:2])
 
@@ -393,8 +388,6 @@ if (os.environ.get('SAGE_DOC_MATHJAX', 'no') != 'no'
     from sage.env import SAGE_LOCAL, SAGE_SHARE
     html_static_path.append(SAGE_LOCAL + "/lib/mathjax")    # conda
     html_static_path.append(SAGE_SHARE + "/mathjax")  # sage distribution
-else:
-     extensions.append('sphinx.ext.pngmath')
 
 # This is to make the verbatim font smaller;
 # Verbatim environment is not breaking long lines
@@ -427,20 +420,13 @@ latex_elements['preamble'] += r'''
 
 from sage.misc.latex_macros import sage_latex_macros
 
-try:
-    pngmath_latex_preamble  # check whether this is already defined
-except NameError:
-    pngmath_latex_preamble = ""
-
 for macro in sage_latex_macros():
     # used when building latex and pdf versions
     latex_elements['preamble'] += macro + '\n'
-    # used when building html version
-    pngmath_latex_preamble += macro + '\n'
 
 
 ## The following is needed on conda-forge sagemath
 from sage.repl.user_globals import initialize_globals
-import sage.all
+import sage.all__sagemath_modules
 my_globs = dict()
-initialize_globals(sage.all, my_globs)
+initialize_globals(sage.all__sagemath_modules, my_globs)
