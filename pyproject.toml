@@ -42,5 +42,9 @@ content-type = "text/x-rst"
 Homepage = "https://github.com/passagemath/sage-numerical-interactive-mip"
 
 [tool.setuptools]
-packages = ["sage_numerical_interactive_mip"]
+packages = [
+    "sage_numerical_interactive_mip",
+    "sage_numerical_interactive_mip._vendor",
+    "sage_numerical_interactive_mip.backends",
+]
 include-package-data = false
