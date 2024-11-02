@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sage_numerical_interactive_mip"
-version = "0.2.1"
+version = "0.3.0"
 description = "Interactive mixed integer linear programming solver"
 license = {text = "GNU General Public License (GPL) v2 or later"}
 authors = [
