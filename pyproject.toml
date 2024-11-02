@@ -24,7 +24,7 @@ file = "README.rst"
 content-type = "text/x-rst"
 
 [project.urls]
-Homepage = "https://github.com/mkoeppe/sage-numerical-interactive-mip"
+Homepage = "https://github.com/passagemath/sage-numerical-interactive-mip"
 
 [tool.setuptools]
 packages = ["sage_numerical_interactive_mip"]
