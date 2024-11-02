@@ -2298,19 +2298,19 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         EXAMPLES::
 
-            sage: from sage_numerical_interactive_mip import InteractiveMILPProblemStandardForm
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1], [-1, -1])
             sage: b = (1000, 1500, -400)
             sage: c = (10, 5)
             sage: P = InteractiveMILPProblemStandardForm(A, b, c)
             sage: P.objective_name()
             z
-            sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style("Vanderbei")
+            sage: style("Vanderbei")
             'Vanderbei'
             sage: P = InteractiveMILPProblemStandardForm(A, b, c)
             sage: P.objective_name()
             zeta
-            sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style("UAlberta")
+            sage: style("UAlberta")
             'UAlberta'
             sage: P = InteractiveMILPProblemStandardForm(A, b, c, objective_name="custom")
             sage: P.objective_name()
