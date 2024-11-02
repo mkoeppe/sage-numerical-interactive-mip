@@ -1220,7 +1220,7 @@ class InteractiveLPProblem(SageObject):
             sage: b = (1000, 1500)
             sage: c = (10, 5)
             sage: P = InteractiveLPProblem(A, b, c, ["C", "B"], variable_type='>=')
-            sage: P.feasible_set()
+            sage: P.feasible_set()                                                      # needs cddexec_gmp
             A 2-dimensional polyhedron in RDF^2
             defined as the convex hull of 4 vertices
         """
