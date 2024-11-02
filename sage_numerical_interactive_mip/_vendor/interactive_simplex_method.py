@@ -1587,8 +1587,8 @@ class InteractiveLPProblem(SageObject):
         start = vector(QQ, start.n() if start is not None
                             else [xmin + (xmax-xmin)/2, ymin + (ymax-ymin)/2])
         length = min(xmax - xmin, ymax - ymin) / 5
-        c = RDF(1) * c
-        end = start + (c * length / c.norm()).change_ring(QQ)
+        c_RDF = RDF(1) * c
+        end = start + (c_RDF * length / c_RDF.norm()).change_ring(QQ)
         result = FP + point(start, color='black', size=50, zorder=10)
         result += arrow(start, end, color='black', zorder=10)
         ieqs = [(xmax, -1, 0), (- xmin, 1, 0),
