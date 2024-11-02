@@ -1193,6 +1193,8 @@ class InteractiveLPProblem(SageObject):
             defined as the convex hull of 4 vertices
             sage: F.backend()
             'ppl'
+
+            sage: # needs cddexec_gmp
             sage: F_cdd = P.feasible_set(backend='cdd'); F_cdd
             A 2-dimensional polyhedron in QQ^2
             defined as the convex hull of 4 vertices
