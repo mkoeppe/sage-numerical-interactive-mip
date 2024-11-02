@@ -9,10 +9,10 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
-        python-version: ['3.7', '2.7']
+        python-version: ['3.11']
     steps:
-    - uses: actions/checkout@v1
-    - uses: goanpeca/setup-miniconda@v1
+    - uses: actions/checkout@v4
+    - uses: conda-incubator/setup-miniconda@v3
       with:
         auto-update-conda: true
         activate-environment: sage-nim
