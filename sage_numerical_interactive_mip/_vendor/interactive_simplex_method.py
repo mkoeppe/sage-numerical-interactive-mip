@@ -42,6 +42,7 @@ Most of the module functionality is demonstrated on the following problem.
 Using variables `C` and `B` for land used to grow corn and barley respectively,
 in acres, we can construct the following LP problem::
 
+    sage: from sage_numerical_interactive_mip import *
     sage: A = ([1, 1], [3, 1])
     sage: b = (1000, 1500)
     sage: c = (10, 5)
@@ -296,11 +297,13 @@ def _latex_product(coefficients, variables,
 
     TESTS::
 
+        sage: # needs sage.symbolic
+        sage: from sage.all__sagemath_symbolic import *
         sage: from sage_numerical_interactive_mip._vendor.interactive_simplex_method import \
         ....:       _latex_product
-        sage: var("x, y")                                                               # needs sage.symbolic
+        sage: var("x, y")
         (x, y)
-        sage: print(_latex_product([-1, 3], [x, y]))                                    # needs sage.symbolic
+        sage: print(_latex_product([-1, 3], [x, y]))
         - \mspace{-6mu}&\mspace{-6mu} x \mspace{-6mu}&\mspace{-6mu} + \mspace{-6mu}&\mspace{-6mu} 3 y
         sage: var("x, y, z")
         (x, y, z)
@@ -372,8 +375,7 @@ def variable(R, v):
 
     EXAMPLES::
 
-        sage: from sage_numerical_interactive_mip._vendor.interactive_simplex_method \
-        ....:     import variable
+        sage: from sage_numerical_interactive_mip import *
         sage: R = PolynomialRing(QQ, "x3, y5, x5, y")
         sage: R.inject_variables()
         Defining x3, y5, x5, y
@@ -615,6 +617,7 @@ class InteractiveLPProblem(SageObject):
 
     ::
 
+        sage: from sage_numerical_interactive_mip import *
         sage: A = ([1, 1], [3, 1])
         sage: b = (1000, 1500)
         sage: c = (10, 5)
@@ -643,6 +646,7 @@ class InteractiveLPProblem(SageObject):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -724,6 +728,7 @@ class InteractiveLPProblem(SageObject):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -751,6 +756,7 @@ class InteractiveLPProblem(SageObject):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -801,6 +807,7 @@ class InteractiveLPProblem(SageObject):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -824,6 +831,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -866,6 +874,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -908,6 +917,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -937,6 +947,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -993,6 +1004,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1015,6 +1027,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1034,6 +1047,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1055,6 +1069,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1072,6 +1087,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1096,6 +1112,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1166,6 +1183,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1183,6 +1201,7 @@ class InteractiveLPProblem(SageObject):
 
         An algebraic polyhedron::
 
+            sage: # needs sage.symbolic
             sage: A = ([1, sqrt(2)], [sqrt(3), 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1229,6 +1248,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1263,6 +1283,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1290,6 +1311,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1312,6 +1334,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1336,6 +1359,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (15, 5)
@@ -1360,6 +1384,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1379,6 +1404,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1398,6 +1424,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1417,6 +1444,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1450,6 +1478,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1468,6 +1497,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1488,6 +1518,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1521,6 +1552,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1597,6 +1629,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1688,6 +1721,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1721,6 +1755,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1852,6 +1887,7 @@ class InteractiveLPProblem(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -1928,6 +1964,7 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
     EXAMPLES::
 
+        sage: from sage_numerical_interactive_mip import *
         sage: A = ([1, 1], [3, 1])
         sage: b = (1000, 1500)
         sage: c = (10, 5)
@@ -1954,6 +1991,7 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2028,6 +2066,7 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: InteractiveLPProblemStandardForm.random_element(3, 4)
             LP problem (use 'view(...)' or '%display typeset' for details)
         """
@@ -2061,6 +2100,7 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2140,6 +2180,7 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1], [-1, -1])
             sage: b = (1000, 1500, -400)
             sage: c = (10, 5)
@@ -2172,6 +2213,7 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1], [-1, -1])
             sage: b = (1000, 1500, -400)
             sage: c = (10, 5)
@@ -2200,6 +2242,7 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1], [-1, -1])
             sage: b = (1000, 1500, -400)
             sage: c = (10, 5)
@@ -2235,6 +2278,7 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2261,6 +2305,7 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1], [-1, -1])
             sage: b = (1000, 1500, -400)
             sage: c = (10, 5)
@@ -2327,6 +2372,7 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2361,6 +2407,7 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2395,6 +2442,7 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2422,6 +2470,7 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2446,6 +2495,7 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1], [-1, -1])
             sage: b = (1000, 1500, -400)
             sage: c = (10, 5)
@@ -2480,6 +2530,7 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2541,6 +2592,7 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1], [-1, -1])
             sage: b = (1000, 1500, -400)
             sage: c = (10, 5)
@@ -2603,6 +2655,7 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1], [-1, -1])
             sage: b = (1000, 1500, -400)
             sage: c = (10, 5)
@@ -2627,6 +2680,7 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: from sage.rings.real_double import RDF
             sage: A = ([RDF(1), RDF(1)], [RDF(3), RDF(1)], [RDF(-1), RDF(-1)])
             sage: b = (RDF(1000), RDF(1500), RDF(-400))
@@ -2652,6 +2706,8 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
         Using constants in the symbolic ring::
 
+            sage: # needs sage.symbolic
+            sage: from sage.all__sagemath_symbolic import *
             sage: A = Matrix(([1, 1], [3, 1], [-1, -1])) * pi
             sage: b = vector((1000, 1500, -400)) * pi
             sage: c = vector((10, 5)) * pi
@@ -2719,6 +2775,7 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2747,6 +2804,7 @@ class LPAbstractDictionary(SageObject):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2765,6 +2823,7 @@ class LPAbstractDictionary(SageObject):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2792,6 +2851,7 @@ class LPAbstractDictionary(SageObject):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2821,6 +2881,7 @@ class LPAbstractDictionary(SageObject):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2854,6 +2915,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([-1, 1, 7], [8, 2, 13], [34, 17, 12])
             sage: b = (2, 17, 6)
             sage: c = (55/10, 21/10, 14/30)
@@ -2872,6 +2934,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2894,6 +2957,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2923,6 +2987,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2960,6 +3025,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -2978,6 +3044,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3001,6 +3068,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3037,6 +3105,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1], [-1, -1])
             sage: b = (1000, 1500, -400)
             sage: c = (10, 5)
@@ -3072,6 +3141,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3108,6 +3178,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3129,6 +3200,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3154,6 +3226,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3178,6 +3251,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3204,6 +3278,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3238,6 +3313,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3274,6 +3350,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3295,6 +3372,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3325,6 +3403,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3343,6 +3422,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3361,6 +3441,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3380,6 +3461,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3403,6 +3485,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3439,6 +3522,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3474,6 +3558,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3514,6 +3599,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3560,6 +3646,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3594,6 +3681,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([-1, 1], [8, 2])
             sage: b = (2, 17)
             sage: c = (55/10, 21/10)
@@ -3629,6 +3717,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1], [-1, -1])
             sage: b = (1000, 1500, -400)
             sage: c = (10, 5)
@@ -3705,6 +3794,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1], [-1, -1])
             sage: b = (1000, 1500, -400)
             sage: c = (10, 5)
@@ -3778,6 +3868,7 @@ class LPAbstractDictionary(SageObject):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3835,6 +3926,7 @@ class LPDictionary(LPAbstractDictionary):
 
     The intended way to use this class is indirect::
 
+        sage: from sage_numerical_interactive_mip import *
         sage: A = ([1, 1], [3, 1])
         sage: b = (1000, 1500)
         sage: c = (10, 5)
@@ -3865,6 +3957,7 @@ class LPDictionary(LPAbstractDictionary):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = matrix(QQ, ([1, 1], [3, 1]))
             sage: b = vector(QQ, (1000, 1500))
             sage: c = vector(QQ, (10, 5))
@@ -3895,6 +3988,7 @@ class LPDictionary(LPAbstractDictionary):
 
         Test that copies do not share state with the original::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3931,6 +4025,7 @@ class LPDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: from sage_numerical_interactive_mip._vendor.interactive_simplex_method \
             ....:     import random_dictionary
             sage: random_dictionary(3, 4)  # indirect doctest
@@ -3965,6 +4060,7 @@ class LPDictionary(LPAbstractDictionary):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -3996,6 +4092,7 @@ class LPDictionary(LPAbstractDictionary):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4079,6 +4176,7 @@ class LPDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([-1, 1, 7], [8, 2, 13], [34, 17, 12])
             sage: b = (2, 17, 6)
             sage: c = (55/10, 21/10, 14/30)
@@ -4124,6 +4222,7 @@ class LPDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4147,6 +4246,7 @@ class LPDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4170,6 +4270,7 @@ class LPDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4188,6 +4289,7 @@ class LPDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4206,6 +4308,7 @@ class LPDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4224,6 +4327,7 @@ class LPDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4243,6 +4347,7 @@ class LPDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4269,6 +4374,7 @@ class LPDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([-1, 1], [8, 2])
             sage: b = (2, 17)
             sage: c = (55/10, 21/10)
@@ -4302,6 +4408,7 @@ class LPDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4422,6 +4529,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
     EXAMPLES::
 
+        sage: from sage_numerical_interactive_mip import *
         sage: A = ([1, 1], [3, 1])
         sage: b = (1000, 1500)
         sage: c = (10, 5)
@@ -4475,6 +4583,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4508,6 +4617,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4536,6 +4646,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4664,6 +4775,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         TESTS::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4705,6 +4817,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4739,6 +4852,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4760,6 +4874,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4783,6 +4898,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4810,6 +4926,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4844,6 +4961,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4890,6 +5008,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([-1, 1111, 3, 17], [8, 222, 7, 6],
             ....: [3, 7, 17, 5], [9, 5, 7, 3])
             sage: b = (2, 17, 11, 27)
@@ -4968,6 +5087,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -4987,6 +5107,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -5005,6 +5126,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -5033,6 +5155,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -5064,6 +5187,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -5086,6 +5210,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -5104,6 +5229,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1], [-1, -1])
             sage: b = (1000, 1500, -400)
             sage: c = (10, 5)
@@ -5140,6 +5266,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -5159,6 +5286,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -5181,6 +5309,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -5199,6 +5328,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -5217,6 +5347,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -5236,6 +5367,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -5262,6 +5394,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([-1, 1], [8, 2])
             sage: b = (2, 17)
             sage: c = (55/10, 21/10)
@@ -5295,6 +5428,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
@@ -5324,6 +5458,7 @@ class LPRevisedDictionary(LPAbstractDictionary):
 
         EXAMPLES::
 
+            sage: from sage_numerical_interactive_mip import *
             sage: A = ([1, 1], [3, 1])
             sage: b = (1000, 1500)
             sage: c = (10, 5)
