@@ -1,7 +1,13 @@
 name: Build and test Python package
 
-# adapted from https://github.com/mkoeppe/sage-numerical-backends-coin
-on: [push, pull_request]
+on:
+  pull_request:
+  merge_group:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+    # Allow to run manually
 
 concurrency:
   # Cancel previous runs of this workflow for the same branch
