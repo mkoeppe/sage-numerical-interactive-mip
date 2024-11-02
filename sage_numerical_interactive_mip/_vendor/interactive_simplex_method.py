@@ -457,13 +457,14 @@ def default_variable_name(variable):
 
     EXAMPLES::
 
-        sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.default_variable_name("primal slack")
+        sage: from sage_numerical_interactive_mip._vendor.interactive_simplex_method import style, default_variable_name
+        sage: default_variable_name("primal slack")
         'x'
-        sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style('Vanderbei')
+        sage: style('Vanderbei')
         'Vanderbei'
-        sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.default_variable_name("primal slack")
+        sage: default_variable_name("primal slack")
         'w'
-        sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style('UAlberta')
+        sage: style('UAlberta')
         'UAlberta'
     """
     return available_styles[current_style][variable]
@@ -530,15 +531,16 @@ def style(new_style=None):
 
     EXAMPLES::
 
-        sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style()
+        sage: from sage_numerical_interactive_mip._vendor.interactive_simplex_method import style
+        sage: style()
         'UAlberta'
-        sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style('Vanderbei')
+        sage: style('Vanderbei')
         'Vanderbei'
-        sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style('Doesntexist')
+        sage: style('Doesntexist')
         Traceback (most recent call last):
         ...
         ValueError: Style must be one of: UAlberta, Vanderbei
-        sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style('UAlberta')
+        sage: style('UAlberta')
         'UAlberta'
     """
     global current_style
@@ -1107,11 +1109,12 @@ class InteractiveLPProblem(SageObject):
 
             sage: DP.standard_form().objective_name()
             -z
-            sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style("Vanderbei")
+            sage: from sage_numerical_interactive_mip._vendor.interactive_simplex_method import style
+            sage: style("Vanderbei")
             'Vanderbei'
             sage: P.dual().standard_form().objective_name()
             -xi
-            sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style("UAlberta")
+            sage: style("UAlberta")
             'UAlberta'
             sage: P.dual().standard_form().objective_name()
             -z
@@ -2447,12 +2450,13 @@ class InteractiveLPProblemStandardForm(InteractiveLPProblem):
             sage: P = InteractiveLPProblemStandardForm(A, b, c)
             sage: P.objective_name()
             z
-            sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style("Vanderbei")
+            sage: from sage_numerical_interactive_mip._vendor.interactive_simplex_method import style
+            sage: style("Vanderbei")
             'Vanderbei'
             sage: P = InteractiveLPProblemStandardForm(A, b, c)
             sage: P.objective_name()
             zeta
-            sage: sage_numerical_interactive_mip._vendor.interactive_simplex_method.style("UAlberta")
+            sage: style("UAlberta")
             'UAlberta'
             sage: P = InteractiveLPProblemStandardForm(A, b, c, objective_name='custom')
             sage: P.objective_name()
