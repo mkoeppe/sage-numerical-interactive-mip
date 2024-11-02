@@ -18,6 +18,16 @@ keywords = [
     "linear-programming",
     "optimization",
 ]
+dependencies = [
+    "passagemath-polyhedra",
+    "passagemath-plot",
+    "passagemath-repl",
+]
+
+[project.optional-dependencies]
+coin = [
+    "passagemath-polyhedra[coin]",
+]
 
 [project.readme]
 file = "README.rst"
