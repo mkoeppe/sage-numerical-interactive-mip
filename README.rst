@@ -2,9 +2,9 @@
  sage-numerical-interactive-mip: Interactive mixed integer linear programming solver
 =====================================================================================
 
-.. image:: https://github.com/mkoeppe/sage-numerical-interactive-mip/workflows/Build%20and%20test%20Python%20package/badge.svg
+.. image:: https://github.com/passagemath/sage-numerical-interactive-mip/workflows/Build%20and%20test%20Python%20package/badge.svg
    :alt: [Build and test Python package]
-   :target: https://github.com/mkoeppe/sage-numerical-interactive-mip/actions/
+   :target: https://github.com/passagemath/sage-numerical-interactive-mip/actions/
 
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3627400.svg
    :target: https://doi.org/10.5281/zenodo.3627400
@@ -23,8 +23,7 @@ Parts of their work (improvements to
 that required changes to existing SageMath modules have already been
 integrated into SageMath in various tickets, see meta-ticket
 https://trac.sagemath.org/ticket/20302 (“Interactions with
-``InteractiveLinearProgram`` and its dictionaries”).  The present
-package should run on any recent release of SageMath.
+``InteractiveLinearProgram`` and its dictionaries”).
 
 The module ``sage_numerical_interactive_mip.interactive_milp_problem``,
 written by Peijun Xiao, provides the interactive MILP problem classes,
@@ -48,7 +47,8 @@ merged.
 How to use
 ==========
 
-This package uses modularized distributions of portions of the Sage library.
+This package uses the modularized distributions of portions of the Sage library
+provided by the `passagemath <https://github.com/passagemath/>`_ project.
 No installation of SageMath is required.
 Just install the package with ``pip``.
 
