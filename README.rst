@@ -6,6 +6,10 @@
    :alt: [Build and test Python package]
    :target: https://github.com/passagemath/sage-numerical-interactive-mip/actions/
 
+.. image:: https://readthedocs.org/projects/sage-numerical-interactive-mip/badge/?version=latest
+   :alt: [Documentation]
+   :target: https://sage-numerical-interactive-mip.readthedocs.io/en/latest/
+
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3627400.svg
    :target: https://doi.org/10.5281/zenodo.3627400
 
