@@ -205,9 +205,7 @@ class InteractiveMILPProblem(SageObject):
           set of strings giving some problem variables' names, where those
           problem variables are integer
 
-        OUTPUT:
-
-        - an :class:`MILP problem <InteractiveMILPProblem>`
+        OUTPUT: an :class:`MILP problem <InteractiveMILPProblem>`
 
         EXAMPLES::
 
@@ -271,9 +269,7 @@ class InteractiveMILPProblem(SageObject):
         - ``xmin``, ``xmax``, ``ymin``, ``ymax`` -- bounds for the axes, if
           not given, an attempt will be made to pick reasonable values
 
-        OUTPUT:
-
-        - four rational numbers
+        OUTPUT: four rational numbers
         """
         if ymax is None:
             ymax = max([abs(x) for x in b] + [v[1] for v in F.vertices()])
@@ -350,9 +346,7 @@ class InteractiveMILPProblem(SageObject):
 
         - ``ith_cut`` -- an integer indicating the order of the cut
 
-        OUTPUT:
-
-        - a plot
+        OUTPUT: a plot
         """
         border = box.intersection(Polyhedron(eqns=[[-bi] + list(Ai)]))
         vertices = border.vertices()
@@ -383,9 +377,7 @@ class InteractiveMILPProblem(SageObject):
         r"""
         Return a string representation of ``self``.
 
-        OUTPUT:
-
-        - a string
+        OUTPUT: a string
 
         TESTS::
 
@@ -409,9 +401,7 @@ class InteractiveMILPProblem(SageObject):
           problem, e.g. a vector or a list of correct length or a single
           element list with such a vector
 
-        OUTPUT:
-
-        - ``x`` as a vector
+        OUTPUT: ``x`` as a vector
 
         EXAMPLES::
 
@@ -435,9 +425,7 @@ class InteractiveMILPProblem(SageObject):
         r"""
         Return `A`, `b`, `c`, and `x` of the relaxation of ``self`` as a tuple.
 
-        OUTPUT:
-
-        - a tuple
+        OUTPUT: a tuple
 
         EXAMPLES::
 
@@ -467,9 +455,7 @@ class InteractiveMILPProblem(SageObject):
         - ``constraint_type`` -- (default: ``"<="``) a string indicating
           the constraint type of the new constraint
 
-        OUTPUT:
-
-        - an :class:`MILP problem <InteractiveMILPProblem>`
+        OUTPUT: an :class:`MILP problem <InteractiveMILPProblem>`
 
         EXAMPLES::
 
@@ -512,9 +498,7 @@ class InteractiveMILPProblem(SageObject):
         r"""
         Return a set of all decision variables of ``self``.
 
-        OUTPUT:
-
-        - a set of variables
+        OUTPUT: a set of variables
 
         EXAMPLES::
 
@@ -536,9 +520,7 @@ class InteractiveMILPProblem(SageObject):
 
             The base ring of MILP problems is always a field.
 
-        OUTPUT:
-
-        - a ring
+        OUTPUT: a ring
 
         EXAMPLES::
 
@@ -561,9 +543,7 @@ class InteractiveMILPProblem(SageObject):
         r"""
         Return constant terms of constraints of the relaxation of ``self``, i.e. `b`.
 
-        OUTPUT:
-
-        - a vector
+        OUTPUT: a vector
 
         EXAMPLES::
 
@@ -583,9 +563,7 @@ class InteractiveMILPProblem(SageObject):
         r"""
         Return coefficients of constraints of the relaxation of ``self``, i.e. `A`.
 
-        OUTPUT:
-
-        - a matrix
+        OUTPUT: a matrix
 
         EXAMPLES::
 
@@ -607,9 +585,7 @@ class InteractiveMILPProblem(SageObject):
         r"""
         Return a tuple listing the constraint types of all rows.
 
-        OUTPUT:
-
-        - a tuple of strings
+        OUTPUT: a tuple of strings
 
         EXAMPLES::
 
@@ -628,9 +604,7 @@ class InteractiveMILPProblem(SageObject):
         r"""
         Return a set of continuous decision variables of ``self``.
 
-        OUTPUT:
-
-        - a set of variables
+        OUTPUT: a set of variables
 
         EXAMPLES::
 
@@ -651,9 +625,7 @@ class InteractiveMILPProblem(SageObject):
         r"""
         Return decision variables of the relaxation of ``self``, i.e. `x`.
 
-        OUTPUT:
-
-        - a vector
+        OUTPUT: a vector
 
         EXAMPLES::
 
@@ -674,9 +646,7 @@ class InteractiveMILPProblem(SageObject):
         r"""
         Return the feasible set of the relaxation of ``self``.
 
-        OUTPUT:
-
-        - a :mod:`Polyhedron <sage.geometry.polyhedron.constructor>`
+        OUTPUT: a :mod:`Polyhedron <sage.geometry.polyhedron.constructor>`
 
         EXAMPLES::
 
@@ -842,9 +812,7 @@ class InteractiveMILPProblem(SageObject):
         r"""
         Return the number of constraints of the relaxation of ``self``, i.e. `m`.
 
-        OUTPUT:
-
-        - an integer
+        OUTPUT: an integer
 
         EXAMPLES::
 
@@ -864,9 +832,7 @@ class InteractiveMILPProblem(SageObject):
         r"""
         Return the number of decision variables of the relaxation of ``self``, i.e. `n`.
 
-        OUTPUT:
-
-        - an integer
+        OUTPUT: an integer
 
         EXAMPLES::
 
@@ -886,9 +852,7 @@ class InteractiveMILPProblem(SageObject):
         r"""
         Return coefficients of the objective of ``self``, i.e. `c`.
 
-        OUTPUT:
-
-        - a vector
+        OUTPUT: a vector
 
         EXAMPLES::
 
@@ -908,9 +872,7 @@ class InteractiveMILPProblem(SageObject):
         r"""
         Return the constant term of the objective of ``self``.
 
-        OUTPUT:
-
-        - a number
+        OUTPUT: a number
 
         EXAMPLES::
 
@@ -969,9 +931,7 @@ class InteractiveMILPProblem(SageObject):
 
         - ``alpha`` -- (default: 0.2) determines how opaque are shadows
 
-        OUTPUT:
-
-        - a plot
+        OUTPUT: a plot
 
         .. NOTE::
 
@@ -1029,9 +989,7 @@ class InteractiveMILPProblem(SageObject):
 
         - ``alpha`` -- (default: 0.2) determines how opaque are shadows
 
-        OUTPUT:
-
-        - a plot
+        OUTPUT: a plot
 
         .. NOTE::
 
@@ -1123,14 +1081,12 @@ class InteractiveMILPProblem(SageObject):
 
         INPUT:
 
-        -``F`` -- the feasible set of self
+        - ``F`` -- the feasible set of ``self``
 
-        -``integer_variable`` -- a string of name of a basic integer variable
-        indicating to plot vertical lines or horizontal lines
+        - ``integer_variable`` -- a string of name of a basic integer variable
+          indicating to plot vertical lines or horizontal lines
 
-        OUTPUT:
-
-        - a plot
+        OUTPUT: a plot
         """
         b = self.b()
         xmin, xmax, ymin, ymax = self._get_plot_bounding_box(
@@ -1160,7 +1116,7 @@ class InteractiveMILPProblem(SageObject):
         Return a plot with the growth of the objective function and the
         objective solution of the relaxation of ``self``.
 
-        ..Note::
+        .. note::
 
             For more information, refer to the docstrings of :meth:`plot`
             in :class:`InteractiveLPProblem`.
@@ -1174,9 +1130,7 @@ class InteractiveMILPProblem(SageObject):
         - ``xmin``, ``xmax``, ``ymin``, ``ymax`` -- bounds for the axes, if
           not given, an attempt will be made to pick reasonable values
 
-        OUTPUT:
-
-        - a plot
+        OUTPUT: a plot
         """
         b = self.b()
         xmin, xmax, ymin, ymax = self._get_plot_bounding_box(
@@ -1218,9 +1172,7 @@ class InteractiveMILPProblem(SageObject):
 
         - ``alpha`` -- (default: 0.2) determines how opaque are shadows
 
-        OUTPUT:
-
-        - a plot
+        OUTPUT: a plot
 
         This only works for problems with two decision variables. On the plot
         the black arrow indicates the direction of growth of the objective. The
@@ -1273,9 +1225,7 @@ class InteractiveMILPProblem(SageObject):
 
         - ``alpha`` -- determines how opaque are shadows
 
-        OUTPUT:
-
-        - a plot
+        OUTPUT: a plot
         """
         if self.n() != 2:
             raise ValueError("only problems with 2 variables can be plotted")
@@ -1323,9 +1273,7 @@ class InteractiveMILPProblem(SageObject):
 
         Needs to be used together with ``is_negative``.
 
-        OUTPUT:
-
-        - a string, one of ``"max"``, ``"min"``.
+        OUTPUT: a string, one of ``"max"``, ``"min"``.
 
         EXAMPLES::
 
@@ -1474,9 +1422,7 @@ class InteractiveMILPProblem(SageObject):
         Return a tuple listing the variable types of all decision variables
         of the relaxation of ``self``.
 
-        OUTPUT:
-
-        - a tuple of strings
+        OUTPUT: a tuple of strings
 
         EXAMPLES::
 
@@ -1968,9 +1914,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
         - ``integer_slack``-- (default: False) a boolean value
           indicating if the new slack variable is integer or not.
 
-        OUTPUT:
-
-        - an :class:`MILP problem in standard form <InteractiveMILPProblemStandardForm>`
+        OUTPUT: an :class:`MILP problem in standard form <InteractiveMILPProblemStandardForm>`
 
         EXAMPLES::
 
@@ -2017,9 +1961,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
         r"""
         Return a set of both decision variables and slack variables of ``self``.
 
-        OUTPUT:
-
-        - a set of variables
+        OUTPUT: a set of variables
 
         EXAMPLES::
 
@@ -2073,9 +2015,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         - basic variables for the dictionary to be constructed
 
-        OUTPUT:
-
-        - a :class:`dictionary <LPDictionary>`
+        OUTPUT: a :class:`dictionary <LPDictionary>`
 
         .. NOTE::
 
@@ -2102,9 +2042,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         See :meth:`run_simplex_method` for the description of possibilities.
 
-        OUTPUT:
-
-        - a :class:`dictionary <LPDictionary>`
+        OUTPUT: a :class:`dictionary <LPDictionary>`
 
         EXAMPLES::
 
@@ -2132,9 +2070,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
         See :meth:`run_revised_simplex_method` for the description of
         possibilities.
 
-        OUTPUT:
-
-        - a :class:`revised dictionary <LPRevisedDictionary>`
+        OUTPUT: a :class:`revised dictionary <LPRevisedDictionary>`
 
         EXAMPLES::
 
@@ -2187,10 +2123,6 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
 
         - ``verbose`` -- if ``True`` (default), names of injected variables
           will be printed
-
-        OUTPUT:
-
-        - none
 
         EXAMPLES::
 
@@ -2292,9 +2224,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
         r"""
         Return the objective name used in dictionaries for this problem.
 
-        OUTPUT:
-
-        - a symbolic expression
+        OUTPUT: a symbolic expression
 
         EXAMPLES::
 
@@ -2432,9 +2362,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
         r"""
         Return the relaxation problem of ``self``
 
-        OUTPUT:
-
-        - an :class:`LP problem in standard form <InteractiveLPProblemStandardForm>`
+        OUTPUT: an :class:`LP problem in standard form <InteractiveLPProblemStandardForm>`
 
         EXAMPLES::
 
@@ -2458,9 +2386,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
         - basic variables for the dictionary to be constructed; if not given,
           :meth:`slack_variables` will be used
 
-        OUTPUT:
-
-        - a :class:`revised dictionary <LPRevisedDictionary>`
+        OUTPUT: a :class:`revised dictionary <LPRevisedDictionary>`
 
         EXAMPLES::
 
@@ -2776,9 +2702,7 @@ class InteractiveMILPProblemStandardForm(InteractiveMILPProblem):
         If you want to give custom names to slack variables, you have to do so
         during construction of the problem.
 
-        OUTPUT:
-
-        - a tuple
+        OUTPUT: a tuple
 
         EXAMPLES::
 
