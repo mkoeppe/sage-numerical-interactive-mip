@@ -7,13 +7,10 @@ class LPAbstractBackendDictionary(LPAbstractDictionary):
 
     INPUT:
 
-        - ``backend`` -- the backend that the dictionary is
-            constructed from
+    - ``backend`` -- the backend that the dictionary is
+        constructed from
 
-    OUTPUT:
-
-       - a :class:`backend dictionary for an LP problem
-       <LPAbstractBackendDictionary>`
+    OUTPUT: a :class:`backend dictionary for an LP problem <LPAbstractBackendDictionary>`
 
     EXAMPLES:
 
@@ -161,9 +158,7 @@ class LPAbstractBackendDictionary(LPAbstractDictionary):
         r"""
         Return the value of the objective value.
 
-        OUTPUT:
-
-        - a number
+        OUTPUT: a number
 
         EXAMPLES::
 
@@ -189,9 +184,7 @@ class LPAbstractBackendDictionary(LPAbstractDictionary):
         r"""
         Return the backend used to create the dictionary.
 
-        OUTPUT:
-
-        - The corresponding backend associated with self
+        OUTPUT: the corresponding backend associated with ``self``
 
         EXAMPLES::
 
@@ -217,9 +210,7 @@ class LPAbstractBackendDictionary(LPAbstractDictionary):
         r"""
         Return a regular LP dictionary matching ``self``.
 
-        OUTPUT:
-
-        - an :class:`LP dictionary <LPDictionary>`
+        OUTPUT: an :class:`LP dictionary <LPDictionary>`
 
         EXAMPLES::
 
@@ -276,8 +267,8 @@ class LPAbstractBackendDictionary(LPAbstractDictionary):
 
         - ``name`` -- the name of the new variable
 
-        - ``auxiliary`` -- (default: True) if true, the symbol of the
-        new varible will be 'w', 'x' otherwise.
+        - ``auxiliary`` -- (default: ``True``) if true, the symbol of the
+          new variable will be 'w', 'x' otherwise.
 
         EXAMPLE::
 

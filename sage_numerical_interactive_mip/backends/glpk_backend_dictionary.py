@@ -12,13 +12,9 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
 
     INPUT:
 
-        - ``backend`` -- the backend where the dictionary is
-            constructed from
+    - ``backend`` -- the backend where the dictionary is constructed from
 
-    OUTPUT:
-
-       - a :class:`backend dictionary for an LP problem
-       <LPGLPKBackendDictionary>`
+    OUTPUT: a :class:`backend dictionary for an LP problem <LPGLPKBackendDictionary>`
 
     EXAMPLES:
 
@@ -80,9 +76,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
         r"""
         Return the basic variables of ``self``.
 
-        OUTPUT:
-
-        - a vector
+        OUTPUT: a vector
 
         EXAMPLES:
 
@@ -182,9 +176,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
         - ``v`` -- a nonbasic variable of ``self``, can be given as a string, an
           actual variable, or an integer interpreted as the index of a variable
 
-        OUTPUT:
-
-        - a vector
+        OUTPUT: a vector
 
         EXAMPLES::
 
@@ -259,9 +251,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
         - ``v`` -- a basic variable of ``self``, can be given as a string, an
           actual variable, or an integer interpreted as the index of a variable
 
-        OUTPUT:
-
-        - a vector
+        OUTPUT: a vector
 
         EXAMPLES::
 
@@ -329,9 +319,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
         r"""
         Return non-basic variables of ``self``.
 
-        OUTPUT:
-
-        - a vector
+        OUTPUT: a vector
 
         EXAMPLES:
 
@@ -362,7 +350,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
             sage: lp, basis = p.interactive_lp_problem()
             sage: lpd = lp.dictionary(*basis)
 
-        Compare results:
+        Compare results::
 
             sage: d.nonbasic_variables()
             (w_0, w_1)
@@ -385,9 +373,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
         r"""
         Return coefficients of the objective of ``self``.
 
-        OUTPUT:
-
-        - a vector
+        OUTPUT: a vector
 
         EXAMPLES:
 
@@ -441,9 +427,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
         r"""
         Return the objective name of ``self``.
 
-        OUTPUT:
-
-        - a symbolic expression
+        OUTPUT: a symbolic expression
 
         """
         return SR("obj")
@@ -563,8 +547,8 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
 
         - ``slack_variable``-- a string of the name for the new slack variable
 
-        - ``integer_slack_variable``-- (default: False) a boolean value
-        indicating if the new slack variable is integer or not.
+        - ``integer_slack_variable``-- (default: ``False``) a boolean value
+          indicating if the new slack variable is integer or not.
 
         EXAMPLES::
 

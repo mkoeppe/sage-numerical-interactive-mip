@@ -11,13 +11,9 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
 
     INPUT:
 
-        - ``backend`` -- the backend that the dictionary is
-            constructed from
+    - ``backend`` -- the backend that the dictionary is constructed from
 
-    OUTPUT:
-
-       - a :class:`backend dictionary for an LP problem
-       <LPCoinBackendDictionary>`
+    OUTPUT: a :class:`backend dictionary for an LP problem <LPCoinBackendDictionary>`
 
     EXAMPLES:
 
@@ -76,9 +72,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
         r"""
         Return the basic variables of ``self``.
 
-        OUTPUT:
-
-        - a vector
+        OUTPUT: a vector
 
         EXAMPLES::
 
@@ -114,9 +108,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
         r"""
         Return the constant terms of relations of ``self``.
 
-        OUTPUT:
-
-        - a vector.
+        OUTPUT: a vector.
 
         EXAMPLES::
 
@@ -158,9 +150,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
         - ``v`` -- a nonbasic variable of ``self``, can be given as a string, an
           actual variable, or an integer interpreted as the index of a variable
 
-        OUTPUT:
-
-        - a vector
+        OUTPUT: a vector
 
         EXAMPLES::
 
@@ -207,9 +197,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
         - ``v`` -- a basic variable of ``self``, can be given as a string, an
           actual variable, or an integer interpreted as the index of a variable
 
-        OUTPUT:
-
-        - a vector
+        OUTPUT: a vector
 
         EXAMPLES::
 
@@ -254,9 +242,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
         r"""
         Return non-basic variables of ``self``.
 
-        OUTPUT:
-
-        - a vector
+        OUTPUT: a vector
 
         EXAMPLES::
 
@@ -292,9 +278,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
         r"""
         Return coefficients of the objective of ``self``.
 
-        OUTPUT:
-
-        - a vector
+        OUTPUT: a vector
 
         EXAMPLES::
 
@@ -333,9 +317,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
         r"""
         Return the objective name of ``self``.
 
-        OUTPUT:
-
-        - a symbolic expression
+        OUTPUT: a symbolic expression
 
         """
         return SR("obj")
@@ -447,8 +429,8 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
 
         - ``slack_variable``-- a string of the name for the new slack variable
 
-        - ``integer_slack_variable``-- (default: False) a boolean value
-        indicating if the new slack variable is integer or not.
+        - ``integer_slack_variable``-- (default: ``False``) a boolean value
+          indicating if the new slack variable is integer or not.
 
         EXAMPLES::
 
