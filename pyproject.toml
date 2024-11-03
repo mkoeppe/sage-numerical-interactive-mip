@@ -32,6 +32,7 @@ coin = [
 
 docs = [
     "sphinx",
+    "furo",
 ]
 
 [project.readme]
