@@ -23,14 +23,11 @@ class LPCleanDictionary(LPAbstractDictionary):
 
     INPUT:
 
-        - ``dictionary`` -- the dictionary to be cleaned
+    - ``dictionary`` -- the dictionary to be cleaned
 
-        - ``epsilon`` -- (default: 1e-9) the tolerance of the cleaning process
+    - ``epsilon`` -- (default: 1e-9) the tolerance of the cleaning process
 
-    OUTPUT:
-
-       - a :class:`dictionary for an LP problem
-       <LPCleanDictionary>`
+    OUTPUT: a :class:`dictionary for an LP problem <LPCleanDictionary>`
 
     EXAMPLES:
 
@@ -122,8 +119,8 @@ class LPCleanDictionary(LPAbstractDictionary):
         INPUT:
 
         - ``v`` -- a basic variable of the associated dictionary,
-        can be given as a string, an actual variable, or an integer
-        interpreted as the index of a variable
+          can be given as a string, an actual variable, or an integer
+          interpreted as the index of a variable
 
         EXAMPLES::
 
@@ -154,8 +151,8 @@ class LPCleanDictionary(LPAbstractDictionary):
         INPUT:
 
         - ``v`` -- a basic variable of the associated dictionary,
-        can be given as a string, an actual variable, or an integer
-        interpreted as the index of a variable
+          can be given as a string, an actual variable, or an integer
+          interpreted as the index of a variable
 
         EXAMPLES::
 
@@ -185,7 +182,7 @@ class LPCleanDictionary(LPAbstractDictionary):
 
         INPUT:
 
-            - ``iterable`` -- the list to tranverse through
+        - ``iterable`` -- the list to tranverse through
 
         EXAMPLES::
 
@@ -213,9 +210,7 @@ class LPCleanDictionary(LPAbstractDictionary):
         - ``v`` -- a basic variable of ``self``, can be given as a string, an
           actual variable, or an integer interpreted as the index of a variable
 
-        OUTPUT:
-
-        - a vector of coefficients of a basic variable
+        OUTPUT: a vector of coefficients of a basic variable
 
         EXAMPLES::
 
@@ -240,9 +235,7 @@ class LPCleanDictionary(LPAbstractDictionary):
         r"""
         Return the constant terms of relations of ``self``.
 
-        OUTPUT:
-
-        - a vector.
+        OUTPUT: a vector.
 
         EXAMPLES::
 
@@ -269,9 +262,7 @@ class LPCleanDictionary(LPAbstractDictionary):
         r"""
         Return coefficients of the objective of ``self``.
 
-        OUTPUT:
-
-        - a vector
+        OUTPUT: a vector
 
         EXAMPLES::
 
@@ -299,9 +290,7 @@ class LPCleanDictionary(LPAbstractDictionary):
         r"""
         Return the value of the objective value.
 
-        OUTPUT:
-
-        - a number
+        OUTPUT: a number
 
         EXAMPLES::
 
@@ -326,9 +315,7 @@ class LPCleanDictionary(LPAbstractDictionary):
         r"""
         Return the basic variables of the associated dictionary.
 
-        OUTPUT:
-
-        - a vector
+        OUTPUT: a vector
 
         EXAMPLES::
 
@@ -352,9 +339,7 @@ class LPCleanDictionary(LPAbstractDictionary):
         r"""
         Return the non-basic variables of the associated dictionary.
 
-        OUTPUT:
-
-        - a vector
+        OUTPUT: a vector
 
         EXAMPLES::
 
@@ -378,9 +363,7 @@ class LPCleanDictionary(LPAbstractDictionary):
         r"""
         Return a cleaned regular LP dictionary of the associated dictionary.
 
-        OUTPUT:
-
-        - an :class:`LP dictionary <LPDictionary>`
+        OUTPUT: an :class:`LP dictionary <LPDictionary>`
 
         EXAMPLES::
 

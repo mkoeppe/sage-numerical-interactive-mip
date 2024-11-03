@@ -7,8 +7,7 @@ class LPAbstractBackendDictionary(LPAbstractDictionary):
 
     INPUT:
 
-    - ``backend`` -- the backend that the dictionary is
-        constructed from
+    - ``backend`` -- the backend that the dictionary is constructed from
 
     OUTPUT: a :class:`backend dictionary for an LP problem <LPAbstractBackendDictionary>`
 

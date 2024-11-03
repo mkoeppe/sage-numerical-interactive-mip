@@ -38,6 +38,7 @@ class LPCoinBackendDictionary(LPAbstractBackendDictionary):
         See :class:`LPCoinBackendDictionary` for documentation.
 
         TESTS::
+
             sage: from sage_numerical_interactive_mip.backends.coin_backend_dictionary \
                   import LPCoinBackendDictionary
             sage: p = MixedIntegerLinearProgram(maximization=True,\

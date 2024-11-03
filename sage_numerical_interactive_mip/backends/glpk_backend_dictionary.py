@@ -591,7 +591,7 @@ class LPGLPKBackendDictionary(LPAbstractBackendDictionary):
             (x_0, x_1, w_0, w_2)
 
         Variables have 0 as their coefficient will not show up in the
-        tableau:
+        tableau::
 
             sage: d.add_row(range(-2, 2), 5, 'z_1')
             sage: d.get_backend().row(4)
