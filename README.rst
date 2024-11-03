@@ -54,10 +54,27 @@ How to use
 This package uses the modularized distributions of portions of the Sage library
 provided by the `passagemath <https://github.com/passagemath/>`_ project.
 No installation of SageMath is required.
-Just install the package with ``pip``.
+Just install the package with ``pip`` and start using it::
 
-The code comes with extensive documentation and tests; see the
-docstrings in the modules.
+  $ pip install sage-numerical-interactive-mip
+
+  $ ipython
+
+  In [1]: from sage_numerical_interactive_mip import *
+
+  In [2]: A = ([1, 1], [3, 1])
+
+  In [3]: b = (1000, 1500)
+
+  In [4]: c = (10, 5)
+
+  In [5]: P = InteractiveMILPProblem(A, b, c, ["C", "B"], variable_type=">=", integer_variables=True)
+
+  In [6]: P
+
+The code comes with extensive
+`documentation <https://sage-numerical-interactive-mip.readthedocs.io/en/latest/>`_
+and tests; see the docstrings in the modules.
 
 How to run the testsuite and build the HTML documentation
 =========================================================
